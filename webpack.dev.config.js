@@ -3,7 +3,10 @@ const path = require('path');
 module.exports = {
 
     /*入口*/
-    entry: path.join(__dirname, 'src/index.js'),
+    entry: [
+        'react-hot-loader/patch',
+        path.join(__dirname, 'src/index.js')
+    ],
 
     /*输出到dist文件夹，输出文件名字为bundle.js*/
     output: {
@@ -25,5 +28,17 @@ module.exports = {
         contentBase: path.join(__dirname, './dist'),
         historyApiFallback: true, //不跳转，在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
         host: '0.0.0.0',//用手机通过IP访问
+    },
+
+    /*别名配置*/
+    resolve: {
+        alias: {
+            pages: path.join(__dirname, 'src/pages'),
+            component: path.join(__dirname, 'src/component'),
+            router: path.join(__dirname, 'src/router'),
+            actions: path.join(__dirname, 'src/redux/actions'),
+            reducers: path.join(__dirname, 'src/redux/reducers'),
+            redux: path.join(__dirname, 'src/redux')
+        }
     }
 }
