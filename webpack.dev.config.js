@@ -21,6 +21,9 @@ module.exports = {
             test: /\.js$/,
             use: ['babel-loader?cacheDirectory=true'],
             include: path.join(__dirname, 'src')
+        },{
+            test: /\.scss$/,
+            loader: 'style-loader!css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!sass-loader?outputStyle=expanded&sourceMap'
         }]
     },
 
@@ -37,8 +40,10 @@ module.exports = {
             component: path.join(__dirname, 'src/component'),
             router: path.join(__dirname, 'src/router'),
             actions: path.join(__dirname, 'src/redux/actions'),
-            reducers: path.join(__dirname, 'src/redux/reducers'),
-            redux: path.join(__dirname, 'src/redux')
+            reducers: path.join(__dirname, 'src/redux/reducers')
         }
-    }
+    },
+
+    /*开启source-map*/
+    devtool: 'inline-source-map'
 }
