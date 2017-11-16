@@ -1,29 +1,53 @@
+const merge = require('webpack-merge');
 const path = require('path');
 
-module.exports = {
+const commonConfig = require('./webpack.common.config.js');
 
-    /*入口*/
-    entry: [
-        'react-hot-loader/patch',
-        path.join(__dirname, 'src/index.js')
-    ],
+const devConfig = {
+    /*开启source-map*/
+    devtool: 'inline-source-map',
 
-    /*输出到dist文件夹，输出文件名字为bundle.js*/
+    entry: {
+        app: [
+            'babel-polyfill',
+            'react-hot-loader/patch',
+            path.join(__dirname, 'src/index.js')
+        ]
+    },
+
     output: {
-        path: path.join(__dirname, './dist'),
-        filename: 'bundle.js'
+        filename: '[name].[hash].js',
     },
 
     /*src文件夹下面的以.js结尾的文件，要使用babel解析*/
     /*cacheDirectory是用来缓存编译结果，下次编译加速*/
     module: {
         rules: [{
-            test: /\.js$/,
-            use: ['babel-loader?cacheDirectory=true'],
-            include: path.join(__dirname, 'src')
-        },{
             test: /\.scss$/,
-            loader: 'style-loader!css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!sass-loader?outputStyle=expanded&sourceMap'
+            use: [
+                { loader: 'style-loader' },
+                {
+                    loader: 'css-loader',
+                    options: {
+                        sourceMap: true,//启用sourceMap
+                        modules: true,//开启css-modules模式
+                        localIdentName: '[name]-[local]-[hash:base64:5]',//设置css-modules模式下local类名的命名
+                        camelCase: true//导出以驼峰化命名的类名
+                    }
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        sourceMap: true,
+                        config: {
+                            path: 'postcss.config.js'  // 在项目根目录创建此文件
+                        }
+                    }
+                },
+                {
+                    loader: 'sass-loader', options: { sourceMap: true }
+                }
+            ]
         }]
     },
 
@@ -31,19 +55,15 @@ module.exports = {
         contentBase: path.join(__dirname, './dist'),
         historyApiFallback: true, //不跳转，在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
         host: '0.0.0.0',//用手机通过IP访问
-    },
+    }
+};
 
-    /*别名配置*/
-    resolve: {
-        alias: {
-            pages: path.join(__dirname, 'src/pages'),
-            component: path.join(__dirname, 'src/component'),
-            router: path.join(__dirname, 'src/router'),
-            actions: path.join(__dirname, 'src/redux/actions'),
-            reducers: path.join(__dirname, 'src/redux/reducers')
+module.exports = merge({
+    customizeArray(a, b, key) {
+        /*entry.app不合并，全替换*/
+        if (key === 'entry.app') {
+            return b;
         }
-    },
-
-    /*开启source-map*/
-    devtool: 'inline-source-map'
-}
+        return undefined;
+    }
+})(commonConfig, devConfig);
