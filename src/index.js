@@ -8,6 +8,7 @@ import App from 'components/App/App';
 
 renderWithHotReload(App);
 
+/*模块热替换*/
 if (module.hot) {
     module.hot.accept('components/App/App', () => {
         const NextApp = require('components/App/App').default;
