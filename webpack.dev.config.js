@@ -36,6 +36,12 @@ const devConfig = {
                     }
                 },
                 {
+                    loader: 'px2rem-loader',
+                    options: {
+                        remUnit:75//设置rem基准
+                    }
+                },
+                {
                     loader: 'postcss-loader',
                     options: {
                         sourceMap: true,
