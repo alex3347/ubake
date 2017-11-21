@@ -6,7 +6,7 @@ const styles = require('./Home.scss');
 export default class Home extends Component {
     render() {
         return (
-            <div className={styles.test}>
+            <div>
                 <Header/>
             </div>
         )
