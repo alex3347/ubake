@@ -36,7 +36,15 @@ module.exports = {
             use: [{
                 loader: 'url-loader',
                 options: {
-                    limit: 8192
+                    limit: 8192 // 限制大小8kb
+                }
+            }]
+        },{
+            test: /\.(png|woff|woff2|svg|ttf|eot)($|\?)/i,
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    limit: 5000 // 限制大小5kb
                 }
             }]
         }]
