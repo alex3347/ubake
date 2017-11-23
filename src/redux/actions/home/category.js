@@ -8,10 +8,10 @@ function getCategoryRequest() {
     }
 }
 
-function getCategorySuccess(category) {
+function getCategorySuccess(json) {
     return {
         type: GET_CATEGORY_SUCCESS,
-        category: category
+        json: json
     }
 }
 
@@ -25,7 +25,7 @@ export function getCategory() {
     return function (dispatch) {
         dispatch(getCategoryRequest());
 
-        return fetch('http://rap2api.taobao.org/app/mock/342/api/home/category')
+        return fetch('http://rap2api.taobao.org/app/mock/342/GET/api/home/category')
             .then((response => {
                 return response.json()
             }))

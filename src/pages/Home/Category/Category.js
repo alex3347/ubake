@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import styles from './Category.scss'
-import {Category} from "actions/home/category";
+import {connect} from 'react-redux';
+
+import {getCategory} from "actions/home/category";
 
 class Category extends Component {
     componentDidMount(){
@@ -14,7 +16,7 @@ class Category extends Component {
                     isLoading ? '请求信息中......' :
                         (
                             errorMsg ? errorMsg :
-                                {category.data.map((item, index) => {
+                                category.map((item, index) => {
                                     // let num = Math.floor(Math.random()*6 + 1)
                                     return(
                                         <div className={styles.item} key={index}>
@@ -35,7 +37,7 @@ class Category extends Component {
                                             </div>
                                         </div>
                                     )
-                                })}
+                                })
                         )
                 }
             </div>

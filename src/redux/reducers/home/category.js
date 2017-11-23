@@ -3,7 +3,7 @@ import {GET_CATEGORY_REQUEST, GET_CATEGORY_SUCCESS, GET_CATEGORY_FAIL} from 'act
 
 const initState = {
     isLoading: false,
-    category: {},
+    category: [],
     errorMsg: ''
 };
 
@@ -13,21 +13,21 @@ export default function reducer(state = initState, action) {
             return {
                 ...state,
                 isLoading: true,
-                category: {},
+                category: [],
                 errorMsg: ''
             };
         case GET_CATEGORY_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
-                category: action.category,
+                category: action.json.data.category,
                 errorMsg: ''
             };
         case GET_CATEGORY_FAIL:
             return {
                 ...state,
                 isLoading: false,
-                category: {},
+                category: [],
                 errorMsg: '请求错误'
             };
         default:
