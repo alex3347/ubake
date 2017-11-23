@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import Header from 'components/Header/Header';
+import Header from './Header/Header';
+import Category from './Category/Category';
+import Tab from 'components/Tab/Tab';
 
 const styles = require('./Home.scss');
 
@@ -8,6 +10,8 @@ export default class Home extends Component {
         return (
             <div>
                 <Header/>
+                <Category/>
+                <Tab/>
             </div>
         )
     }

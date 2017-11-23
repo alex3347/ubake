@@ -40,7 +40,7 @@ module.exports = {
                 }
             }]
         },{
-            test: /\.(png|woff|woff2|svg|ttf|eot)($|\?)/i,
+            test: /\.(woff|woff2|svg|ttf|eot)($|\?)/i,
             use: [{
                 loader: 'url-loader',
                 options: {

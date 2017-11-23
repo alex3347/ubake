@@ -1,0 +1,43 @@
+.container {
+  width:100%;
+  height:102px;
+  position: fixed;
+  bottom:0;
+  border-top:1px solid #eee;
+  background-color: #fff;
+  .link{
+    width:20%;
+    height:102px;
+    display: inline-block;
+    padding-top: 8px;
+    text-align: center;
+    vertical-align: top;
+    i{
+      display: block;
+      font-size: 54px;
+      text-align: center;
+      color: #b9b9b9;
+    }
+    s{
+      display: block;
+      font-size: 24px;
+      color: #b9b9b9;
+      text-decoration: none;
+      text-align: center;
+    }
+    .plusBtn{
+      display: inline-block;
+      width:86px;
+      height:86px;
+      border-radius: 50%;
+      background-color: #f4ab1e;
+      line-height:86px;
+      vertical-align: top;
+      i{
+        font-size: 38px;
+        color: #fff;
+      }
+    }
+  }
+}
+
