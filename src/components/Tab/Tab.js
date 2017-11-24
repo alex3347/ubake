@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 
 export default class Category extends Component {
     render() {
+        // var current = {};
+        // current[home] = 'on';
         return (
             <div className={styles.container}>
                 <Link to="/" className={styles.link}>

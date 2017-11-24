@@ -17,13 +17,13 @@ class Category extends Component {
                         (
                             errorMsg ? errorMsg :
                                 category.map((item, index) => {
-                                    // let num = Math.floor(Math.random()*6 + 1)
+                                let temp = ['吐司','面包','蛋糕','披萨','提拉米苏','蛋挞','饼干','月饼']
                                     return(
                                         <div className={styles.item} key={index}>
-                                            <img className={styles.bac} src={require('../images/bac1.png')}/>
+                                            <img className={styles.bac} src={require('../images/bac'+(index+1)+'.png')}/>
                                             <div className={styles.cover}/>
                                             <div className={styles.detail}>
-                                                <div className={styles.title}>{item.name}</div>
+                                                <div className={styles.title}>{temp[index]}</div>
                                                 <div className={styles.content}>
                                                     <div className={styles.like}>
                                                         <i className='iconfont icon-hongxin'/>
