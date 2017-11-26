@@ -1,0 +1,112 @@
+.detail{
+  padding-bottom: 110px;
+  >img{
+    width:100%;
+  }
+  .title{
+    text-align: center;
+    font-size: 38px;
+    color: #333;
+    height:100px;
+    line-height: 100px;
+  }
+  .discribe{
+    font-size: 24px;
+    color: #fff;
+    height:33px;
+    line-height: 33px;
+    text-align: center;
+    i{
+      display: inline-block;
+      width:57px;
+      height: 33px;
+      background-color: #f4ab1e;
+      font-style: normal;
+    }
+  }
+  .evaluate{
+    font-size: 24px;
+    color: #333;
+    height:82px;
+    line-height: 82px;
+    text-align: center;
+    div{
+      display: inline-block;
+    }
+    div:last-child{
+      margin-left: 30px;
+    }
+  }
+  .btn{
+    width:295px;
+    height:96px;
+    border:1px solid #f4ab1e;/*no*/
+    border-radius: 9px;
+    text-align: center;
+    line-height:96px;
+    color: #f4ab1e;
+    i{
+      display: inline-block;
+      font-size: 36px;
+      vertical-align: top;
+      padding-top: 4px;
+    }
+    s{
+      display: inline-block;
+      text-decoration: none;
+      font-size: 30px;
+      margin-left: 17px;
+      vertical-align: top;
+    }
+  }
+  .control{
+    text-align: center;
+    div{
+      display: inline-block;
+      border:1px solid #ff6a5a;/*no*/
+    }
+    div:first-child{
+      background-color: #ff6a5a;
+      color: #fff;
+
+    }
+    div:last-child{
+      margin-left: 50px;
+      color: #ff6a5a;
+    }
+  }
+  .list{
+    padding:14px 26px 0;
+    >div{
+      height:88px;
+      line-height:88px;
+      border-bottom: 1px solid #eee;/*no*/
+    }
+    .listTitle{
+      text-align: center;
+      font-size: 30px;
+      color: #333;
+    }
+    .listItem{
+      font-size: 28px;
+      color: #333;
+      i{
+        display: inline-block;
+        font-style: normal;
+        float: left;
+      }
+      s{
+        text-decoration: none;
+        float: right;
+      }
+    }
+  }
+  .buy{
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 80px;
+    >div{
+      display: inline-block;
+    }
+  }
+}

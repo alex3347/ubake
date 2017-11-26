@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import styles from './Tab.scss'
 import {Link} from 'react-router-dom';
-import {home,market,discover,mine} from 'actions/tab';
 
 import {connect} from 'react-redux';
 
@@ -9,11 +8,11 @@ class Tab extends Component {
     render() {
         return (
             <div className={styles.container}>
-                <Link to="/" className={`${styles.link} ${this.props.tab.home}`} onClick={() => this.props.home()}>
+                <Link to="/" className={`${styles.link} ${this.props.tab.home}`}>
                     <i className='iconfont icon-dangaoline'/>
                     <s>首页</s>
                 </Link>
-                <Link to="/" className={`${styles.link} ${this.props.tab.market}`} onClick={() => this.props.market()}>
+                <Link to="/" className={`${styles.link} ${this.props.tab.market}`}>
                     <i className='iconfont icon-jishi2'/>
                     <s>市集</s>
                 </Link>
@@ -22,11 +21,11 @@ class Tab extends Component {
                         <i className='iconfont icon-iconjia'/>
                     </div>
                 </Link>
-                <Link to="/page1" className={`${styles.link} ${this.props.tab.discover}`} onClick={() => this.props.discover()}>
+                <Link to="/page1" className={`${styles.link} ${this.props.tab.discover}`}>
                     <i className='iconfont icon-faxian'/>
                     <s>发现</s>
                 </Link>
-                <Link to="/" className={`${styles.link} ${this.props.tab.mine}`} onClick={() => this.props.mine()}>
+                <Link to="/" className={`${styles.link} ${this.props.tab.mine}`}>
                     <i className='iconfont icon-wode'/>
                     <s>我的</s>
                 </Link>
@@ -35,27 +34,19 @@ class Tab extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+    let name = ownProps.name
+    let temp = {
+            ...state.tab,
+        }
+    temp[name] = styles.on
     return {
-        tab: state.tab
+        tab: temp
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        home: () => {
-            dispatch(home())
-        },
-        market: () => {
-            dispatch(market())
-        },
-        discover: () => {
-            dispatch(discover())
-        },
-        mine: () => {
-            dispatch(mine())
-        }
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tab);

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import styles from './Category.scss'
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import {getCategory} from "actions/home/category";
 
@@ -19,7 +20,7 @@ class Category extends Component {
                                 category.map((item, index) => {
                                 let temp = ['吐司','面包','蛋糕','披萨','提拉米苏','蛋挞','饼干','月饼']
                                     return(
-                                        <div className={styles.item} key={index}>
+                                        <Link to="/CategoryDetail" className={styles.item} key={index}>
                                             <img className={styles.bac} src={require('../images/bac'+(index+1)+'.png')}/>
                                             <div className={styles.cover}/>
                                             <div className={styles.detail}>
@@ -35,7 +36,7 @@ class Category extends Component {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     )
                                 })
                         )

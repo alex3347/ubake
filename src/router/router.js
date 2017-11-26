@@ -10,6 +10,7 @@ import Page1 from 'bundle-loader?lazy&name=page1!pages/Page1/Page1';
 import Counter from 'bundle-loader?lazy&name=counter!pages/Counter/Counter';
 import UserInfo from 'bundle-loader?lazy&name=userInfo!pages/UserInfo/UserInfo';
 import NotFound from 'bundle-loader?lazy&name=notFound!pages/NotFound/NotFound';
+import CategoryDetail from 'bundle-loader?lazy&name=notFound!pages/CategoryDetail/CategoryDetail';
 
 const createComponent = (component) => () => (
     <Bundle load={component}>
@@ -20,11 +21,12 @@ const createComponent = (component) => () => (
 );
 
 export default () => (
-    <Switch>
-        <Route exact path="/" component={createComponent(Home)}/>
-        <Route path="/page1" component={createComponent(Page1)}/>
-        <Route path="/counter" component={createComponent(Counter)}/>
-        <Route path="/userinfo" component={createComponent(UserInfo)}/>
-        <Route component={createComponent(NotFound)}/>
-    </Switch>
+        <Switch>
+            <Route exact path="/" component={createComponent(Home)}/>
+            <Route path="/page1" component={createComponent(Page1)}/>
+            <Route path="/counter" component={createComponent(Counter)}/>
+            <Route path="/userinfo" component={createComponent(UserInfo)}/>
+            <Route path="/CategoryDetail" component={createComponent(CategoryDetail)}/>
+            <Route component={createComponent(NotFound)}/>
+        </Switch>
 );

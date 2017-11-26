@@ -1,0 +1,25 @@
+.container {
+  width:100%;
+  height:110px;
+  position: fixed;
+  bottom:0;
+  border-top:1px solid #eee;
+  background-color: #f4ab1e;
+  text-align: center;
+  line-height: 110px;
+  i{
+    display: inline-block;
+    font-size: 47px;
+    vertical-align: top;
+    color: #fff;
+  }
+  s{
+    display: inline-block;
+    font-size: 30px;
+    vertical-align: top;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+  }
+}
+
