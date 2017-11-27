@@ -1,5 +1,7 @@
 .location{
   text-align: center;
+  font-size: 26px;
+  padding-bottom: 20px;
   span{
     display: inline-block;
     font-size: 26px;
@@ -9,6 +11,7 @@
   >div {
     display: inline-block;
     vertical-align: top;
+    margin-left: 20px;
     span{
       display: inline-block;
       color: #f4ab1e;
@@ -28,43 +31,86 @@
 .itemContainer{
   .item{
     .itemTitle{
-
+      font-size: 26px;
+      color: #666;
+      height:64px;
+      line-height: 64px;
+      background-color: #f2f2f2;
+      padding-left: 26px;
     }
     .itemDetail{
       overflow: hidden;
+      padding: 48px 26px 29px 60px;
+      border:1px solid #eee;/*no*/
       .itemLeft{
         float: left;
+        width:110px;
       }
       .itemRight{
         float: right;
         .content{
+          width:406px;
+          float: left;
           .detail{
-
+            font-size: 26px;
+            color: #333;
           }
           .price{
-
+            font-size: 28px;
+            color: #ff4646;
+            margin-top: 44px;
+            s{
+              display: inline-block;
+              font-size: 22px;
+              color: #b0b0b0;
+              margin-left: 10px;
+            }
           }
         }
         i{
           display: block;
+          float: right;
+          font-size: 53px;
+          color: #ff5959;
+          margin-top: 20px;
         }
       }
     }
     .similar{
+      text-align: center;
+      height:70px;
+      line-height: 70px;
       span{
         display: inline-block;
         vertical-align: top;
+        font-size: 26px;
+        color: #b0b0b0;
       }
       i{
         display: inline-block;
         vertical-align: top;
+        color: #b0b0b0;
       }
     }
   }
 }
+.block{
+  height:28px;
+  background-color: #f2f2f2;
+}
 .btnContainer{
   text-align: center;
+  width:100%;
+  height:148px;
+  line-height:148px;
   .btn{
     display: inline-block;
+    width:666px;
+    height:96px;
+    line-height: 96px;
+    font-size: 30px;
+    color: #fff;
+    background-color: #f4ab1e;
+    border-radius: 8px;
   }
 }
