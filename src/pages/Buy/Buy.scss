@@ -1,0 +1,70 @@
+.location{
+  text-align: center;
+  span{
+    display: inline-block;
+    font-size: 26px;
+    color: #b0b0b0;
+    vertical-align: top;
+  }
+  >div {
+    display: inline-block;
+    vertical-align: top;
+    span{
+      display: inline-block;
+      color: #f4ab1e;
+      vertical-align: top;
+    }
+    i{
+      display: inline-block;
+      color: #f4ab1e;
+      vertical-align: top;
+    }
+  }
+}
+.pic{
+  display: block;
+  width:100%;
+}
+.itemContainer{
+  .item{
+    .itemTitle{
+
+    }
+    .itemDetail{
+      overflow: hidden;
+      .itemLeft{
+        float: left;
+      }
+      .itemRight{
+        float: right;
+        .content{
+          .detail{
+
+          }
+          .price{
+
+          }
+        }
+        i{
+          display: block;
+        }
+      }
+    }
+    .similar{
+      span{
+        display: inline-block;
+        vertical-align: top;
+      }
+      i{
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+  }
+}
+.btnContainer{
+  text-align: center;
+  .btn{
+    display: inline-block;
+  }
+}

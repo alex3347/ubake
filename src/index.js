@@ -7,7 +7,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import App from 'components/App/App';
 
 import './static/css/reset.css'
-import './static/css/iconfont.css'
+import './static/iconfont/iconfont.css'
 import './static/js/flexible.js'
 
 renderWithHotReload(App);

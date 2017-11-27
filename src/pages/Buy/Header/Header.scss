@@ -1,0 +1,31 @@
+.container {
+  overflow: hidden;
+  padding:24px 20px;
+  font-size: 44px;
+  >i{
+    display: inline-block;
+    font-size: 44px;
+    vertical-align: top;
+  }
+  .title{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    font-size: 36px;
+    color: #333;
+    vertical-align: top;
+    width:586px;
+    height:62px;
+    text-align: center;
+  }
+  .left{
+    padding-top: 6px;
+    margin-right: 17px;
+  }
+  .right{
+    padding-top: 6px;
+    margin-left: 17px;
+    color: #333;
+  }
+}
+

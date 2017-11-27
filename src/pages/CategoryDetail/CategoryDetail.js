@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import {Link} from 'react-router-dom';
 
 const styles = require('./CategoryDetail.scss');
 
@@ -49,10 +50,10 @@ export default class CategoryDetail extends Component {
                         </div>
                     </div>
                     <div className={styles.buy}>
-                        <div className={styles.btn}>
+                        <Link to="/Buy" className={styles.btn}>
                             <i className='iconfont icon-gouwuche'/>
                             <s>一键买齐</s>
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 <Footer/>
