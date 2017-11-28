@@ -12,7 +12,7 @@ class Tab extends Component {
                     <i className='iconfont icon-dangaoline'/>
                     <s>首页</s>
                 </Link>
-                <Link to="/" className={`${styles.link} ${this.props.tab.market}`}>
+                <Link to="/Market" className={`${styles.link} ${this.props.tab.market}`}>
                     <i className='iconfont icon-jishi2'/>
                     <s>市集</s>
                 </Link>
@@ -21,7 +21,7 @@ class Tab extends Component {
                         <i className='iconfont icon-iconjia'/>
                     </div>
                 </Link>
-                <Link to="/page1" className={`${styles.link} ${this.props.tab.discover}`}>
+                <Link to="/Discover" className={`${styles.link} ${this.props.tab.discover}`}>
                     <i className='iconfont icon-faxian'/>
                     <s>发现</s>
                 </Link>
