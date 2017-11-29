@@ -1,0 +1,121 @@
+.bac{
+  background-color: #f3f3f3;
+  .up{
+    overflow: hidden;
+    background-color: #fff;
+    .container{
+      width:750px;
+      height:387px;
+      position: relative;
+      >img{
+        position: absolute;
+        width:100%;
+        left:0;
+        bottom:0;
+      }
+      .content{
+        position: absolute;
+        width:100%;
+        left:0;
+        top:24px;
+        .avatarContainer{
+          width:156px;
+          height:156px;
+          border-radius: 50%;
+          margin:0 auto;
+          img{
+            width:152px;
+            height:152px;
+            border-radius: 50%;
+          }
+        }
+        .name{
+          font-size: 36px;
+          color: #fff;
+          height:102px;
+          line-height: 102px;
+          text-align: center;
+        }
+        .describe{
+          font-size: 30px;
+          color: #fff;
+          text-align: center;
+        }
+
+      }
+    }
+    .itemList{
+      overflow: hidden;
+      .item{
+        width:85px;
+        height:104px;
+        margin-left: 50px;
+        margin-right: 50px;
+        float: left;
+        overflow: hidden;
+        i{
+          font-size: 40px;
+          color: #666;
+          display: block;
+          text-align: center;
+          margin-top: 10px;
+        }
+        .itemContent{
+          font-size: 28px;
+          color: #333;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .down{
+    .tab{
+      height:105px;
+      font-size: 34px;
+      background-color: #f3f3f3;
+      .btnContainer{
+        width:50%;
+        text-align: center;
+        float: left;
+        height:105px;
+        div{
+          display: inline-block;
+          width:100%;
+          height:101px;
+          line-height: 101px;
+          border-bottom: 4px solid #f3f3f3;
+          text-align: center;
+          font-size: 34px;
+          color: #333;
+        }
+        .on{
+          color: #f4ab1e;
+          border-bottom-color: #f4ab1e;
+        }
+      }
+    }
+    .works{
+      width:100%;
+      height:424px;
+      background-color: #fff;
+      overflow: hidden;
+      .title{
+        text-align: center;
+        font-size: 28px;
+        color: #333;
+        margin-top: 86px;
+      }
+      .btn{
+        width:280px;
+        height:96px;
+        line-height:96px;
+        text-align: center;
+        font-size: 32px;
+        color: #fff;
+        background-color: #f4ab1e;
+        border-radius: 8px;
+        margin:38px auto 0;
+      }
+    }
+  }
+}

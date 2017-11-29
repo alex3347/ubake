@@ -25,7 +25,7 @@ class Tab extends Component {
                     <i className='iconfont icon-faxian'/>
                     <s>发现</s>
                 </Link>
-                <Link to="/" className={`${styles.link} ${this.props.tab.mine}`}>
+                <Link to="/Mine" className={`${styles.link} ${this.props.tab.mine}`}>
                     <i className='iconfont icon-wode'/>
                     <s>我的</s>
                 </Link>

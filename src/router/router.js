@@ -14,6 +14,7 @@ import CategoryDetail from 'bundle-loader?lazy&name=notFound!pages/CategoryDetai
 import Buy from 'bundle-loader?lazy&name=notFound!pages/Buy/Buy';
 import Market from 'bundle-loader?lazy&name=notFound!pages/Market/Market';
 import Discover from 'bundle-loader?lazy&name=notFound!pages/Discover/Discover';
+import Mine from 'bundle-loader?lazy&name=notFound!pages/Mine/Mine';
 
 const createComponent = (component) => () => (
     <Bundle load={component}>
@@ -33,6 +34,7 @@ export default () => (
             <Route path="/Buy" component={createComponent(Buy)}/>
             <Route path="/Market" component={createComponent(Market)}/>
             <Route path="/Discover" component={createComponent(Discover)}/>
+            <Route path="/Mine" component={createComponent(Mine)}/>
             <Route component={createComponent(NotFound)}/>
         </Switch>
 );
