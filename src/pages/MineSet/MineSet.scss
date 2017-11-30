@@ -1,0 +1,76 @@
+.bac{
+  background-color: #f3f3f3;
+  height:100vh;
+  .personal{
+    width:100%;
+    height:134px;
+    margin:22px 0;
+    background-color: #fff;
+    .avatarContainer{
+      width:95px;
+      height:95px;
+      border-radius: 50%;
+      float: left;
+      margin:20px 0 0 40px;
+      img{
+        width:95px;
+        height:95px;
+      }
+    }
+    .name{
+      margin-left: 24px;
+      font-size: 32px;
+      color: #333;
+      float: left;
+      height:134px;
+      line-height:134px;
+      font-weight: bold;
+    }
+    i{
+      float: right;
+      font-size: 34px;
+      color: #bebebe;
+      height:134px;
+      line-height:134px;
+      margin-right: 40px;
+    }
+  }
+  .item{
+    overflow: hidden;
+    border-bottom: 1px solid #eee;/*no*/
+    background-color: #fff;
+    .itemName{
+      float: left;
+      margin-left: 40px;
+      font-size: 30px;
+      color: #333;
+      height:100px;
+      line-height: 100px;
+    }
+    i{
+      float: right;
+      font-size: 34px;
+      color: #bebebe;
+      height:100px;
+      line-height: 100px;
+      margin-right: 40px;
+    }
+  }
+  .special{
+    margin:24px 0;
+    border-bottom: none;
+  }
+  .btn{
+    margin:46px 40px 0;
+    div{
+      width:670px;
+      height:96px;
+      text-align: center;
+      line-height: 96px;
+      color: #fff;
+      background-color: #f4ab1e;
+      border-radius: 8px;
+      font-size: 34px;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.bac{
+  background-color: #fff;
+  height:100vh;
+  position: relative;
+  .inputContainer{
+    padding:38px 36px 0;
+    .item{
+      overflow: hidden;
+      border-bottom: 1px solid #eee;/*no*/
+      height:94px;
+      span{
+        float: left;
+        font-size: 32px;
+        color: #333;
+        width:80px;
+        height:94px;
+        line-height: 94px;
+      }
+      input{
+        float: left;
+        font-size: 32px;
+        height:94px;
+        line-height: 94px;
+      }
+    }
+    .btn{
+      margin-top:40px;
+      div{
+        width:100%;
+        height:96px;
+        text-align: center;
+        line-height: 96px;
+        color: #fff;
+        background-color: #f4ab1e;
+        border-radius: 8px;
+        font-size: 34px;
+      }
+    }
+  }
+  .describe{
+    font-size: 28px;
+    color: #999;
+    text-align: center;
+    margin-top: 25px;
+  }
+  .otherLogin{
+    position: absolute;
+    bottom:0;
+    left:0;
+    .titleContainer{
+      text-align: center;
+      padding-top: 18px;
+      font-size: 30px;
+      width:750px;
+      .title{
+        font-size: 32px;
+        color: #333;
+        text-align: center;
+        width:200px;
+        height:30px;
+        display: inline-block;
+        vertical-align: top;
+      }
+      &:before{
+        content:'';
+        border-top: 1px solid #eee;/*no*/
+        width:220px;
+        height:30px;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 18px;
+      }
+      &:after{
+        content:'';
+        border-top: 1px solid #eee;/*no*/
+        width:220px;
+        height:30px;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 18px;
+      }
+    }
+    .btnContainer{
+      overflow: hidden;
+      .btn{
+        float: left;
+        margin-left: 100px;
+        margin-top: 56px;
+        margin-bottom: 70px;
+        img{
+          display: block;
+          width:120px;
+          height:120px;
+          margin:0 auto;
+        }
+        span{
+          display: block;
+          font-size: 28px;
+          color: #333;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

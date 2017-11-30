@@ -15,6 +15,10 @@ import Buy from 'bundle-loader?lazy&name=notFound!pages/Buy/Buy';
 import Market from 'bundle-loader?lazy&name=notFound!pages/Market/Market';
 import Discover from 'bundle-loader?lazy&name=notFound!pages/Discover/Discover';
 import Mine from 'bundle-loader?lazy&name=notFound!pages/Mine/Mine';
+import MineUpload from 'bundle-loader?lazy&name=notFound!pages/MineUpload/MineUpload';
+import MineSet from 'bundle-loader?lazy&name=notFound!pages/MineSet/MineSet';
+import MineCollection from 'bundle-loader?lazy&name=notFound!pages/MineCollection/MineCollection';
+import Login from 'bundle-loader?lazy&name=notFound!pages/Login/Login';
 
 const createComponent = (component) => () => (
     <Bundle load={component}>
@@ -35,6 +39,10 @@ export default () => (
             <Route path="/Market" component={createComponent(Market)}/>
             <Route path="/Discover" component={createComponent(Discover)}/>
             <Route path="/Mine" component={createComponent(Mine)}/>
+            <Route path="/MineUpload" component={createComponent(MineUpload)}/>
+            <Route path="/MineSet" component={createComponent(MineSet)}/>
+            <Route path="/MineCollection" component={createComponent(MineCollection)}/>
+            <Route path="/Login" component={createComponent(Login)}/>
             <Route component={createComponent(NotFound)}/>
         </Switch>
 );

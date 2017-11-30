@@ -1,0 +1,109 @@
+.bac{
+  background-color: #fff;
+  height:100vh;
+  .detailList{
+    padding:24px 26px 0;
+    overflow: hidden;
+    .item{
+      width:100%;
+      margin-bottom: 28px;
+      overflow: hidden;
+      display: block;
+      background-color: #fff;
+      .itemLeft{
+        width:140px;
+        height:140px;
+        border-radius: 8px;
+        position: relative;
+        float: left;
+        >img{
+          width:140px;
+          height:140px;
+        }
+        .tip{
+          width:56px;
+          height:54px;
+          position: absolute;
+          top:0;
+          left:0;
+          img{
+            width:56px;
+            height:54px;
+            position: absolute;
+            top:0;
+            left:0;
+          }
+          div{
+            position: absolute;
+            top:0;
+            left:0;
+            font-size: 24px;
+            i{
+              display: inline-block;
+              font-size: 24px;
+              font-style: normal;
+              vertical-align: bottom;
+              color: #fff;
+            }
+            s{
+              display: inline-block;
+              text-decoration: none;
+              font-size: 20px;
+              vertical-align: bottom;
+              color: #fff;
+            }
+          }
+        }
+      }
+      .itemRight{
+        float: right;
+        width:531px;
+        border-bottom:1px solid #eee;/*no*/
+        .content{
+          float: left;
+          .title{
+            font-size: 28px;
+            color: #333;
+          }
+          .detail{
+            font-size: 24px;
+            color: #b0b0b0;
+            margin-top: 10px;
+          }
+          .from{
+            font-size: 24px;
+            color: #b0b0b0;
+            margin-top: 10px;
+            margin-bottom: 12px;
+            i{
+              font-style: normal;
+              color: #f4ab1e;
+              margin-left: 10px;
+            }
+          }
+        }
+        >i{
+          float: right;
+          font-size: 34px;
+          color: #f4ab1e;
+          height:100px;
+          line-height: 100px;
+          margin-right: 26px;
+        }
+      }
+    }
+  }
+  .btn{
+    margin:46px 40px 0;
+    div{
+      width:670px;
+      height:96px;
+      text-align: center;
+      line-height: 96px;
+      color: #fff;
+      background-color: #f4ab1e;
+      border-radius: 8px;
+      font-size: 34px;
+    }
+  }
+}

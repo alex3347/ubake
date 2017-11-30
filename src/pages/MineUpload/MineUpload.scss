@@ -1,0 +1,123 @@
+.bac{
+  background-color: #f3f3f3;
+  height:100vh;
+  .up{
+    margin-top: 24px;
+    background-color: #fff;
+    .textareaContainer{
+      border-bottom: 1px solid #eee;/*no*/
+      .textarea{
+        display: block;
+        width:100%;
+        height:150px;
+        text-decoration: none;
+        font-size: 26px;
+        border:none;
+        padding:32px 38px;
+        overflow: scroll;
+      }
+      .picContainer{
+        overflow: hidden;
+        .addPic{
+          width:90px;
+          height:90px;
+          border:1px dashed #b0b0b0;/*no*/
+          border-radius: 8px;
+          text-align: center;
+          line-height:90px;
+          font-size: 37px;
+          float: left;
+          margin-left: 38px;
+          i{
+            display: inline-block;
+            color: #b0b0b0;
+          }
+        }
+        .miniPicContainer{
+          float: left;
+          width:550px;
+          margin-left: 38px;
+          overflow: hidden;
+          img{
+            float: left;
+            width:90px;
+            height:90px;
+            margin-left: 38px;
+            margin-bottom: 38px;
+          }
+        }
+      }
+    }
+    .itemList{
+      height:100px;
+      border-bottom: 1px solid #eee;/*no*/
+      i{
+        float: left;
+        font-size: 40px;
+        color: #e2e2e2;
+        margin-top: 30px;
+        margin-left: 36px;
+      }
+      i:last-child{
+        float: right;
+        margin-right: 36px;
+      }
+      .itemContainer{
+        overflow: hidden;
+        width:520px;
+        margin-top: 18px;
+        float: left;
+        padding-left: 40px;
+        .item{
+          float: left;
+          font-size: 26px;
+          color: #999;
+          width:96px;
+          height:64px;
+          background-color: #f3f3f3;
+          text-align: center;
+          line-height: 64px;
+          margin-right: 44px;
+        }
+        .item:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+    .itemListDescribe{
+      height:100px;
+      line-height: 100px;
+      font-size: 28px;
+      color: #f4ab1e;
+      padding-left: 60px;
+    }
+  }
+  .down{
+    .title{
+      font-size: 26px;
+      color: #333;
+      margin-top: 62px;
+      margin-bottom: 30px;
+      padding-left: 36px;
+    }
+    .shareList{
+      overflow: hidden;
+      .shareListItem{
+        float: left;
+        margin-left: 94px;
+        img{
+          display: block;
+          width:60px;
+          height:60px;
+          margin:0 auto;
+        }
+        span{
+          display: block;
+          font-size: 24px;
+          color: #333;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

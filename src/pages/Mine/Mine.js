@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from './Header/Header';
 import Tab from 'components/Tab/Tab';
+import {Link} from 'react-router-dom';
 
 const styles = require('./Mine.scss');
 
@@ -26,10 +27,10 @@ export default class Home extends Component {
                             <i className='iconfont icon-tianjialianxiren'/>
                             <div className={styles.itemContent}>订单</div>
                         </div>
-                        <div className={styles.item}>
+                        <Link to='/MineCollection' className={styles.item}>
                             <i className='iconfont icon-Collection-wx3'/>
                             <div className={styles.itemContent}>收藏</div>
-                        </div>
+                        </Link>
                         <div className={styles.item}>
                             <i className='iconfont icon-youhui'/>
                             <div className={styles.itemContent}>优惠</div>
@@ -51,7 +52,7 @@ export default class Home extends Component {
                     </div>
                     <div className={styles.works}>
                         <div className={styles.title}>开始分享我的美食作品</div>
-                        <div className={styles.btn}>上传作品</div>
+                        <Link to="/MineUpload" className={styles.btn}>上传作品</Link>
                     </div>
                 </div>
                 <Tab {...arg}/>
