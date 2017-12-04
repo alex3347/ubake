@@ -36,7 +36,6 @@ export function getMaster() {
                 return response.json()
             }))
             .then((json) => {
-            console.log(json)
                     dispatch(getMasterSuccess(json))
                 }
             ).catch(
@@ -44,5 +43,10 @@ export function getMaster() {
                     dispatch(getMasterFail());
                 }
             )
+    }
+}
+export function loadMoreFn() {
+    return function () {
+        console.log('success')
     }
 }

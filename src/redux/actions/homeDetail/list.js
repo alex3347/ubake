@@ -36,7 +36,6 @@ export function getList() {
                 return response.json()
             }))
             .then((json) => {
-            console.log(json)
                     dispatch(getListSuccess(json))
                 }
             ).catch(

@@ -3,7 +3,7 @@ import Header from './Header/Header';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import {getMaster} from "actions/homeDetail/master";
+import {getMaster,loadMoreFn} from "actions/homeDetail/master";
 import {getList} from "actions/homeDetail/list";
 
 
@@ -13,6 +13,26 @@ class HomeDetail extends Component {
     componentDidMount(){
         this.props.getMaster();
         this.props.getList();
+        const loadMoreFn = this.props.loadMoreFn;
+        const wrapper = this.refs.wrapper;
+        let timeoutId;
+        function callback() {
+            const top = wrapper.getBoundingClientRect().top;
+            const windowHeight = window.screen.height;
+            if(top && top < windowHeight){
+                //当wrapper已经被滚动到页面的可视范围之内
+                loadMoreFn()
+            }
+        }
+        window.addEventListener('scroll',function () {
+            if(this.props.isLoadingMore){
+                return;
+            }
+            if(timeoutId){
+                clearTimeout(timeoutId)
+            }
+            timeoutId = setTimeout(callback,50)
+        }.bind(this),false)
     }
     render() {
         const {master} = this.props.master;
@@ -87,6 +107,9 @@ class HomeDetail extends Component {
                         })
                     }
                 </div>
+                <div className={styles.loading} ref='wrapper'>
+                    加载中...
+                </div>
             </div>
         )
     }
@@ -95,4 +118,4 @@ class HomeDetail extends Component {
 export default connect((state) => ({
     master: state.master,
     list: state.list
-}), {getMaster,getList})(HomeDetail);
+}), {getMaster,getList,loadMoreFn})(HomeDetail);
