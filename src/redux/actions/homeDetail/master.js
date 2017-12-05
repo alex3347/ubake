@@ -21,6 +21,7 @@ function getMasterFail() {
     }
 }
 
+
 export function getMaster() {
     return function (dispatch) {
         dispatch(getMasterRequest());
@@ -43,10 +44,5 @@ export function getMaster() {
                     dispatch(getMasterFail());
                 }
             )
-    }
-}
-export function loadMoreFn() {
-    return function () {
-        console.log('success')
     }
 }

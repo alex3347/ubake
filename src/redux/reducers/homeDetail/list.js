@@ -1,9 +1,10 @@
-import {GET_LIST_REQUEST, GET_LIST_SUCCESS, GET_LIST_FAIL} from 'actions/homeDetail/list';
+import {GET_LIST_REQUEST, GET_LIST_SUCCESS, GET_LIST_FAIL, LOAD_MORE} from 'actions/homeDetail/list';
 
 
 const initState = {
     list: [],
-    errorMsg: ''
+    errorMsg: '',
+    isLoadingMore:true
 };
 
 export default function reducer(state = initState, action) {
@@ -25,6 +26,11 @@ export default function reducer(state = initState, action) {
                 ...state,
                 list: [],
                 errorMsg: '请求错误'
+            };
+        case LOAD_MORE:
+            return {
+                ...state,
+                isLoadingMore:false
             };
         default:
             return state;

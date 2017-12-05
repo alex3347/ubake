@@ -32,7 +32,6 @@ const devConfig = {
                         sourceMap: true,//启用sourceMap
                         modules: true,//开启css-modules模式
                         localIdentName: '[name]-[local]-[hash:base64:5]',//设置css-modules模式下local类名的命名
-                        camelCase: true//导出以驼峰化命名的类名
                     }
                 },
                 {

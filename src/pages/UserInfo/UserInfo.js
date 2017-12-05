@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getUserInfo} from "actions/userInfo";
 
+import styles from './UserInfo.scss'
 class UserInfo extends Component {
 
     render() {
@@ -9,7 +10,16 @@ class UserInfo extends Component {
         return (
             <div>
                 {
-                    isLoading ? '请求信息中......' :
+                    isLoading ?
+                        <div className={styles.container}>
+                            <div className={styles.iconContainer}>
+                                <i className='iconfont icon-jiazaizhong'/>
+                            </div>
+                            <div className={styles.info}>
+                                请求信息中......
+                            </div>
+                        </div>
+                        :
                         (
                             errorMsg ? errorMsg :
                                 <div>
@@ -19,7 +29,6 @@ class UserInfo extends Component {
                                 </div>
                         )
                 }
-                <button onClick={() => this.props.getUserInfo()}>请求用户信息</button>
             </div>
         )
     }

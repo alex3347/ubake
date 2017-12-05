@@ -1,6 +1,8 @@
 export const GET_LIST_REQUEST = "list/GET_LIST_REQUEST";
 export const GET_LIST_SUCCESS = "list/GET_LIST_SUCCESS";
 export const GET_LIST_FAIL = "list/GET_LIST_FAIL";
+export const LOAD_MORE = "master/LOAD_MORE";
+
 
 function getListRequest() {
     return {
@@ -18,6 +20,12 @@ function getListSuccess(json) {
 function getListFail() {
     return {
         type: GET_LIST_FAIL
+    }
+}
+
+function loadMore() {
+    return {
+        type: LOAD_MORE
     }
 }
 
@@ -43,5 +51,11 @@ export function getList() {
                     dispatch(getListFail());
                 }
             )
+    }
+}
+
+export function loadMoreFn() {
+    return function (dispatch) {
+        dispatch(loadMore());
     }
 }
