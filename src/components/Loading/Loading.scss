@@ -1,0 +1,27 @@
+.container {
+  height:100vh;
+  .iconContainer{
+    text-align: center;
+    padding-top: 400px;
+    i{
+      font-size: 100px;
+      display: inline-block;
+      color: #f4ab1e;
+      width:100px;
+      height:100px;
+      animation: change 2s infinite linear;
+    }
+  }
+  @keyframes change {
+    0%{transform:rotate(0deg);}
+    50%{transform:rotate(180deg);}
+    100%{transform:rotate(360deg);}
+  }
+  .info{
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+  }
+}
+

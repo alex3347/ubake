@@ -2,20 +2,19 @@ import React, {Component} from 'react';
 import Header from './Header/Header';
 import DetailList from './DetailList/DetailList';
 import Master from './Master/Master';
+import Loading from 'components/Loading/Loading';
 
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import {getMaster} from "actions/homeDetail/master";
-import {getList,loadMoreFn} from "actions/homeDetail/list";
+import {request,loadMoreFn} from "actions/homeDetail";
 
 
 const styles = require('./HomeDetail.scss');
 
 class HomeDetail extends Component {
     componentDidMount(){
-        this.props.getMaster();
-        this.props.getList();
+        this.props.request();
 
         const loadMoreFn = this.props.loadMoreFn;
         const wrapper = this.refs.wrapper;
@@ -40,51 +39,56 @@ class HomeDetail extends Component {
             }
             timeoutId = setTimeout(callback,50)
         }.bind(this),false)
+
     }
+
     render() {
-        const {master,isLoadingMore} = this.props.master;
-        const {list} = this.props.list;
+        const {master,list,loading,isLoadingMore} = this.props.homeDetail;
+
         return (
-            <div>
-                <Header/>
-                <div className={styles.suggest}>
-                    <Link to='/CategoryDetail' className={styles.suggestItem}>
-                        <img src={require('./images/bac1.png')} alt=""/>
-                        <div className={styles.cover}/>
-                        <div className={styles.content}>
-                            <div className={styles.iconContainer}>
-                                <i className='iconfont icon-xin'/>
+            loading ?
+                <Loading/>
+                :
+                <div>
+                    <Header/>
+                    <div className={styles.suggest}>
+                        <Link to='/CategoryDetail' className={styles.suggestItem}>
+                            <img src={require('./images/bac1.png')} alt=""/>
+                            <div className={styles.cover}/>
+                            <div className={styles.content}>
+                                <div className={styles.iconContainer}>
+                                    <i className='iconfont icon-xin'/>
+                                </div>
+                                <div className={styles.text}>系统分享做法</div>
                             </div>
-                            <div className={styles.text}>系统分享做法</div>
-                        </div>
-                    </Link>
-                    <Link to='/CategoryDetail' className={styles.suggestItem}>
-                        <img src={require('./images/bac2.png')} alt=""/>
-                        <div className={styles.cover}/>
-                        <div className={styles.content}>
-                            <div className={styles.iconContainer}>
-                                <i className='iconfont icon-xin'/>
+                        </Link>
+                        <Link to='/CategoryDetail' className={styles.suggestItem}>
+                            <img src={require('./images/bac2.png')} alt=""/>
+                            <div className={styles.cover}/>
+                            <div className={styles.content}>
+                                <div className={styles.iconContainer}>
+                                    <i className='iconfont icon-xin'/>
+                                </div>
+                                <div className={styles.text}>达人分享做法</div>
                             </div>
-                            <div className={styles.text}>达人分享做法</div>
-                        </div>
-                    </Link>
+                        </Link>
+                    </div>
+                    <Master master={master}/>
+                    <div className={styles.block}/>
+                    <DetailList list={list}/>
+                    {
+                        isLoadingMore ?
+                            <div className={styles.loading} ref='wrapper'>
+                                加载中...
+                            </div>:
+                            <DetailList list={list}/>
+                    }
                 </div>
-                <Master master={master}/>
-                <div className={styles.block}/>
-                <DetailList list={list}/>
-                {
-                    isLoadingMore ?
-                        <div className={styles.loading} ref='wrapper'>
-                            加载中...
-                        </div>:
-                        <DetailList list={list}/>
-                }
-            </div>
         )
     }
 }
 
 export default connect((state) => ({
     master: state.master,
-    list: state.list
-}), {getMaster,getList,loadMoreFn})(HomeDetail);
+    homeDetail: state.homeDetail
+}), {request,loadMoreFn})(HomeDetail);

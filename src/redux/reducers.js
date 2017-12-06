@@ -5,8 +5,7 @@ import userInfo from 'reducers/userInfo';
 import tab from 'reducers/tab';
 import header from 'reducers/home/header';
 import category from 'reducers/home/category';
-import master from 'reducers/homeDetail/master';
-import list from 'reducers/homeDetail/list';
+import homeDetail from 'reducers/homeDetail';
 
 
 export default combineReducers({
@@ -15,6 +14,5 @@ export default combineReducers({
     tab,
     header,
     category,
-    master,
-    list
+    homeDetail
 });

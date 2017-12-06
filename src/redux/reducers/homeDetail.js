@@ -1,31 +1,32 @@
-import {GET_LIST_REQUEST, GET_LIST_SUCCESS, GET_LIST_FAIL, LOAD_MORE} from 'actions/homeDetail/list';
+import {REQUEST_MASTER_SUCCESS, REQUEST_LIST_SUCCESS, REQUEST_FAIL, LOAD_MORE} from 'actions/homeDetail';
 
 
 const initState = {
+    master: [],
     list: [],
     errorMsg: '',
+    loading:true,
     isLoadingMore:true
 };
 
 export default function reducer(state = initState, action) {
     switch (action.type) {
-        case GET_LIST_REQUEST:
+        case REQUEST_MASTER_SUCCESS:
+            console.log(action.payload);
             return {
                 ...state,
-                list: [],
-                errorMsg: ''
+                master: action.payload.data.master,
             };
-        case GET_LIST_SUCCESS:
+        case REQUEST_LIST_SUCCESS:
             return {
                 ...state,
-                list: action.json.data.list,
-                errorMsg: ''
+                list:action.payload.data.list,
             };
-        case GET_LIST_FAIL:
+        case REQUEST_FAIL:
             return {
                 ...state,
-                list: [],
-                errorMsg: '请求错误'
+                errorMsg: '请求错误',
+                loading:false
             };
         case LOAD_MORE:
             return {
