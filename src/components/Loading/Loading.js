@@ -9,7 +9,7 @@ export default class Loading extends Component {
                     <i className='iconfont icon-jiazaizhong'/>
                 </div>
                 <div className={styles.info}>
-                    加载中...
+                    {this.props.msg || '加载中...'}
                 </div>
             </div>
         )

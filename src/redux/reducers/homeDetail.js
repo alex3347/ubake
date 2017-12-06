@@ -1,10 +1,10 @@
-import {REQUEST_MASTER_SUCCESS, REQUEST_LIST_SUCCESS, REQUEST_FAIL, LOAD_MORE} from 'actions/homeDetail';
+import {REQUEST_MASTER_SUCCESS, REQUEST_LIST_SUCCESS, REQUEST_ALL_SUCCESS, REQUEST_FAIL, LOAD_MORE} from 'actions/homeDetail';
 
 
 const initState = {
     master: [],
     list: [],
-    errorMsg: '',
+    msg: '',
     loading:true,
     isLoadingMore:true
 };
@@ -12,7 +12,6 @@ const initState = {
 export default function reducer(state = initState, action) {
     switch (action.type) {
         case REQUEST_MASTER_SUCCESS:
-            console.log(action.payload);
             return {
                 ...state,
                 master: action.payload.data.master,
@@ -22,11 +21,15 @@ export default function reducer(state = initState, action) {
                 ...state,
                 list:action.payload.data.list,
             };
+        case REQUEST_ALL_SUCCESS:
+            return {
+                ...state,
+                loading:false,
+            };
         case REQUEST_FAIL:
             return {
                 ...state,
-                errorMsg: '请求错误',
-                loading:false
+                msg: '请检查网络后重试',
             };
         case LOAD_MORE:
             return {

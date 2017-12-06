@@ -15,12 +15,17 @@ const styles = require('./HomeDetail.scss');
 class HomeDetail extends Component {
     componentDidMount(){
         this.props.request();
+    }
 
+    componentDidUpdate(){
         const loadMoreFn = this.props.loadMoreFn;
         const wrapper = this.refs.wrapper;
         let timeoutId;
 
         function callback() {
+            if(!wrapper){
+                return
+            }
             const top = wrapper.getBoundingClientRect().top;
             const windowHeight = window.screen.height;
             if(top && top < windowHeight){
@@ -39,15 +44,14 @@ class HomeDetail extends Component {
             }
             timeoutId = setTimeout(callback,50)
         }.bind(this),false)
-
     }
 
     render() {
-        const {master,list,loading,isLoadingMore} = this.props.homeDetail;
+        const {master,list,msg,loading,isLoadingMore} = this.props.homeDetail;
 
         return (
             loading ?
-                <Loading/>
+                <Loading msg={msg}/>
                 :
                 <div>
                     <Header/>
