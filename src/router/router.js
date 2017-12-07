@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Match} from 'react-router-dom';
 
 import Bundle from './Bundle';
 import Loading from 'components/Loading/Loading';
@@ -34,7 +34,7 @@ export default () => (
             <Route path="/counter" component={createComponent(Counter)}/>
             <Route path="/userinfo" component={createComponent(UserInfo)}/>
             <Route path="/HomeDetail" component={createComponent(HomeDetail)}/>
-            <Route path="/CategoryDetail" component={createComponent(CategoryDetail)}/>
+            <Route path="/CategoryDetail/:id" component={createComponent(CategoryDetail)}/>
             <Route path="/Buy" component={createComponent(Buy)}/>
             <Route path="/Market" component={createComponent(Market)}/>
             <Route path="/Discover" component={createComponent(Discover)}/>

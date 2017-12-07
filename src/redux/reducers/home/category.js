@@ -2,9 +2,9 @@ import {GET_CATEGORY_REQUEST, GET_CATEGORY_SUCCESS, GET_CATEGORY_FAIL} from 'act
 
 
 const initState = {
-    isLoading: false,
     category: [],
-    errorMsg: ''
+    reload:false,
+    isLoading: true,
 };
 
 export default function reducer(state = initState, action) {
@@ -12,23 +12,20 @@ export default function reducer(state = initState, action) {
         case GET_CATEGORY_REQUEST:
             return {
                 ...state,
+                reload:false,
                 isLoading: true,
-                category: [],
-                errorMsg: ''
             };
         case GET_CATEGORY_SUCCESS:
             return {
                 ...state,
-                isLoading: false,
                 category: action.json.data.category,
-                errorMsg: ''
+                isLoading: false,
             };
         case GET_CATEGORY_FAIL:
             return {
                 ...state,
-                isLoading: false,
-                category: [],
-                errorMsg: '请求错误'
+                reload:true,
+                isLoading: true,
             };
         default:
             return state;

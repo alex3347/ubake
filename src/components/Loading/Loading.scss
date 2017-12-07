@@ -1,15 +1,22 @@
 .container {
-  height:100vh;
+  overflow: hidden;
   .iconContainer{
     text-align: center;
     padding-top: 400px;
-    i{
+    .loading{
       font-size: 100px;
       display: inline-block;
       color: #f4ab1e;
       width:100px;
       height:100px;
       animation: change 2s infinite linear;
+    }
+    .reload{
+      font-size: 100px;
+      display: inline-block;
+      color: #eee;
+      width:100px;
+      height:100px;
     }
   }
   @keyframes change {

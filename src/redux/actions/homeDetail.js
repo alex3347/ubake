@@ -1,8 +1,15 @@
+export const BEGIN_REQUEST = "homeDetail/BEGIN_REQUEST";
 export const REQUEST_MASTER_SUCCESS = "homeDetail/REQUEST_MASTER_SUCCESS";
 export const REQUEST_LIST_SUCCESS = "homeDetail/REQUEST_LIST_SUCCESS";
 export const REQUEST_ALL_SUCCESS = "homeDetail/REQUEST_ALL_SUCCESS";
 export const REQUEST_FAIL = "homeDetail/REQUEST_FAIL";
 export const LOAD_MORE = "homeDetail/LOAD_MORE";
+
+function beginRequest() {
+    return {
+        type: BEGIN_REQUEST
+    }
+}
 
 function requestMasterSuccess(payload) {
     return {
@@ -38,7 +45,7 @@ function loadMore() {
 
 export function request() {
     return function (dispatch) {
-
+        dispatch(beginRequest())
         return Promise.all([
             fetch('http://rap2api.taobao.org/app/mock/342/POST/api/homeDetail/master',{
                 method:'post',

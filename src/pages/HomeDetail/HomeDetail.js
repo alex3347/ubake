@@ -47,11 +47,11 @@ class HomeDetail extends Component {
     }
 
     render() {
-        const {master,list,msg,loading,isLoadingMore} = this.props.homeDetail;
+        const {master,list,reload,loading,isLoadingMore} = this.props.homeDetail;
 
         return (
             loading ?
-                <Loading msg={msg}/>
+                <Loading reload={reload} request={this.props.request}/>
                 :
                 <div>
                     <Header/>

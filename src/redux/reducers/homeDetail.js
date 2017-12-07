@@ -1,16 +1,21 @@
-import {REQUEST_MASTER_SUCCESS, REQUEST_LIST_SUCCESS, REQUEST_ALL_SUCCESS, REQUEST_FAIL, LOAD_MORE} from 'actions/homeDetail';
+import {BEGIN_REQUEST, REQUEST_MASTER_SUCCESS, REQUEST_LIST_SUCCESS, REQUEST_ALL_SUCCESS, REQUEST_FAIL, LOAD_MORE} from 'actions/homeDetail';
 
 
 const initState = {
     master: [],
     list: [],
-    msg: '',
+    reload: false,
     loading:true,
     isLoadingMore:true
 };
 
 export default function reducer(state = initState, action) {
     switch (action.type) {
+        case BEGIN_REQUEST:
+            return {
+                ...state,
+                reload: false
+            };
         case REQUEST_MASTER_SUCCESS:
             return {
                 ...state,
@@ -29,7 +34,7 @@ export default function reducer(state = initState, action) {
         case REQUEST_FAIL:
             return {
                 ...state,
-                msg: '请检查网络后重试',
+                reload: true
             };
         case LOAD_MORE:
             return {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import {Link} from 'react-router-dom';
+import {Link,Match} from 'react-router-dom';
 
 const styles = require('./CategoryDetail.scss');
 
@@ -14,7 +14,7 @@ export default class CategoryDetail extends Component {
                     <img src={require('./images/bac.png')}  className={styles.pic} alt=""/>
                     <div className={styles.title}>蛋挞</div>
                     <div className={styles.discribe}>
-                        <i>精品</i>
+                        <i>精品{this.props.match.params.id}</i>
                     </div>
                     <div className={styles.evaluate}>
                         <div>8.5综合评分</div>
