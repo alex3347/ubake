@@ -6,6 +6,7 @@ import tab from 'reducers/tab';
 import header from 'reducers/home/header';
 import category from 'reducers/home/category';
 import homeDetail from 'reducers/homeDetail';
+import categoryDetail from 'reducers/categoryDetail';
 
 
 export default combineReducers({
@@ -14,5 +15,6 @@ export default combineReducers({
     tab,
     header,
     category,
-    homeDetail
+    homeDetail,
+    categoryDetail
 });

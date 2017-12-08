@@ -10,7 +10,10 @@ export default class DetailList extends Component {
                 {
                     this.props.list.map((item, index) => {
                         return(
-                            <Link to={`/CategoryDetail/${item.id}`} className={styles.item} key={index}>
+                            <Link to={{
+                                pathname: `/CategoryDetail/${item.id}`,
+                                state: { name: item.name }
+                            }} className={styles.item} key={index}>
                                 <div className={styles.itemLeft}>
                                     <img src={require('../images/item'+(index+1)+'.png')} alt=""/>
                                     <div className={styles.tip}>

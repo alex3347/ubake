@@ -20,6 +20,19 @@
     color: #fff;
     text-decoration: none;
     margin-left: 30px;
+    position: relative;
+    text-indent: 0;
+    overflow: hidden;
+  }
+  input{
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
   }
 }
+
+
+
 

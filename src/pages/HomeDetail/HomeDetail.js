@@ -56,7 +56,10 @@ class HomeDetail extends Component {
                 <div>
                     <Header/>
                     <div className={styles.suggest}>
-                        <Link to='/CategoryDetail' className={styles.suggestItem}>
+                        <Link to={{
+                            pathname: `/CategoryDetail/1`,
+                            state: { name: '小蛋糕' }
+                        }} className={styles.suggestItem}>
                             <img src={require('./images/bac1.png')} alt=""/>
                             <div className={styles.cover}/>
                             <div className={styles.content}>
@@ -66,7 +69,10 @@ class HomeDetail extends Component {
                                 <div className={styles.text}>系统分享做法</div>
                             </div>
                         </Link>
-                        <Link to='/CategoryDetail' className={styles.suggestItem}>
+                        <Link to={{
+                            pathname: `/CategoryDetail/1`,
+                            state: { name: '小蛋糕' }
+                        }} className={styles.suggestItem}>
                             <img src={require('./images/bac2.png')} alt=""/>
                             <div className={styles.cover}/>
                             <div className={styles.content}>

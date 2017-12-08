@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Route, Switch, Match} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 import Bundle from './Bundle';
 import Loading from 'components/Loading/Loading';
@@ -20,10 +20,10 @@ import MineSet from 'bundle-loader?lazy&name=notFound!pages/MineSet/MineSet';
 import MineCollection from 'bundle-loader?lazy&name=notFound!pages/MineCollection/MineCollection';
 import Login from 'bundle-loader?lazy&name=notFound!pages/Login/Login';
 
-const createComponent = (component) => () => (
+const createComponent = (component) => (match) => (
     <Bundle load={component}>
         {
-            (Component) => Component ? <Component/> : <Loading/>
+            (Component) => Component ? <Component {...match}/> : <Loading/>
         }
     </Bundle>
 );

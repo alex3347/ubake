@@ -73,7 +73,10 @@ export function request() {
             })
             .then(() => dispatch(hasLoaded()))
             .catch(
-                error => dispatch(requestFail())
+                error => {
+                    console.log(error)
+                    dispatch(requestFail())
+                }
             )
 
     }
