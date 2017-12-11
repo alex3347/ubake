@@ -99,7 +99,6 @@ function requestCategoryFail() {
 export function requestCategory() {
     return function (dispatch) {
         dispatch(beginCategoryRequest())
-        console.log(1)
         return fetch('http://rap2api.taobao.org/app/mock/342/POST/api/market/category',{
             method:'post',
             body: {

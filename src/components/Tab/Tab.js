@@ -5,7 +5,16 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 class Tab extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            active: false
+        }
+    }
     render() {
+        const click = (e)=>{
+            this.setState({active: !this.state.active})
+        }
         return (
             <div className={styles.container}>
                 <Link to="/" className={`${styles.link} ${this.props.tab.home}`}>
@@ -16,11 +25,11 @@ class Tab extends Component {
                     <i className='iconfont icon-jishi2'/>
                     <s>市集</s>
                 </Link>
-                <Link to="/" className={styles.link}>
+                <div className={styles.link} onClick={click}>
                     <div className={styles.plusBtn}>
                         <i className='iconfont icon-iconjia'/>
                     </div>
-                </Link>
+                </div>
                 <Link to="/Discover" className={`${styles.link} ${this.props.tab.discover}`}>
                     <i className='iconfont icon-faxian'/>
                     <s>发现</s>
@@ -29,6 +38,33 @@ class Tab extends Component {
                     <i className='iconfont icon-wode'/>
                     <s>我的</s>
                 </Link>
+                <div className={styles.addBtnContainer} style = {this.state.active ? {'display': 'block'}:{'display': 'none'}}>
+                    <div className={styles.shadow}/>
+                    <div className={`${styles.addBtn} ${styles.addBtn1}`}>
+                        <div className={styles.iconContainer}>
+                            <i className='iconfont icon-xiexin'/>
+                        </div>
+                        <div className={styles.title}>写菜谱</div>
+                        <div className={styles.describe}>与大家分享美食做法</div>
+                    </div>
+                    <div className={`${styles.addBtn} ${styles.addBtn2}`}>
+                        <div className={styles.iconContainer}>
+                            <i className='iconfont icon-jishi2'/>
+                        </div>
+                        <div className={styles.title}>逛市集</div>
+                        <div className={styles.describe}>写点烘焙用品和工具</div>
+                    </div>
+                    <div className={`${styles.addBtn} ${styles.addBtn3}`}>
+                        <div className={styles.iconContainer}>
+                            <i className='iconfont icon-05'/>
+                        </div>
+                        <div className={styles.title}>发动态</div>
+                        <div className={styles.describe}>晒美食、晒生活</div>
+                    </div>
+                    <div className={styles.closeBtn} onClick={click}>
+                        <i className='iconfont icon-cross'/>
+                    </div>
+                </div>
             </div>
         )
     }

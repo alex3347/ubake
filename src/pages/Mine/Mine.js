@@ -6,8 +6,20 @@ import {Link} from 'react-router-dom';
 const styles = require('./Mine.scss');
 
 export default class Home extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            active: '0'
+        }
+    }
     render() {
         let arg = {name:'mine'}
+
+        const click = (e)=>{
+            this.setState({active: e.target.getAttribute("mark")})
+            // this.props.request()
+        }
+
         return (
             <div className={styles.bac}>
                 <Header/>
@@ -43,12 +55,19 @@ export default class Home extends Component {
                 </div>
                 <div className={styles.down}>
                     <div className={styles.tab}>
-                        <div className={styles.btnContainer}>
-                            <div className={styles.on}>作品</div>
-                        </div>
-                        <div className={styles.btnContainer}>
-                            <div>菜谱</div>
-                        </div>
+                        {
+                            ['作品','菜谱'].map((item, index)=>{
+                                return (
+                                    <div className={styles.btnContainer} key={index}>
+                                        <div onClick={click}
+                                             mark={index}
+                                             style = {(index == this.state.active) ? {'borderBottomColor': '#f4ab1e','color': '#f4ab1e'}:null}>
+                                            {item}
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                     <div className={styles.works}>
                         <div className={styles.title}>开始分享我的美食作品</div>
