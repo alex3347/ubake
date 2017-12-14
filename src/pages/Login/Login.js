@@ -18,11 +18,14 @@ export default class Login extends Component {
                         <span>密码</span>
                         <input type="text" placeholder="请输入密码"/>
                     </div>
-                    <div className={styles.btn}>
+                    <div className={styles.login}>
                         <div>登录</div>
                     </div>
                 </div>
-                <div className={styles.describe}>登录后可以同步菜谱、收藏夹和交厨友</div>
+                <div className={styles.others}>
+                    <div className={styles.left}>忘记密码</div>
+                    <div className={styles.right}>立即注册</div>
+                </div>
                 <div className={styles.otherLogin}>
                     <div className={styles.titleContainer}>
                         <div className={styles.title}>第三方登录</div>
@@ -33,11 +36,11 @@ export default class Login extends Component {
                             <span>微信登录</span>
                         </div>
                         <div className={styles.btn}>
-                            <img src={require('./images/item2.png')} alt=""/>
+                            <img src={require('./images/item3.png')} alt=""/>
                             <span>QQ登录</span>
                         </div>
                         <div className={styles.btn}>
-                            <img src={require('./images/item3.png')} alt=""/>
+                            <img src={require('./images/item2.png')} alt=""/>
                             <span>微博登录</span>
                         </div>
                     </div>

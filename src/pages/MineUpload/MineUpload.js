@@ -34,7 +34,6 @@ export default class MineUpload extends Component {
                         </div>
                         <i className='iconfont icon-jiantou'/>
                     </div>
-                    <div className={styles.itemListDescribe}>#添加作品标签</div>
                 </div>
                 <div className={styles.down}>
                     <div className={styles.title}>同步到:</div>
@@ -50,10 +49,6 @@ export default class MineUpload extends Component {
                         <div className={styles.shareListItem}>
                             <img src={require('./images/share3.png')} alt=""/>
                             <span>空间</span>
-                        </div>
-                        <div className={styles.shareListItem}>
-                            <img src={require('./images/share4.png')} alt=""/>
-                            <span>豆瓣</span>
                         </div>
                     </div>
                 </div>

@@ -35,32 +35,32 @@ class Tab extends Component {
                     <s>发现</s>
                 </Link>
                 <Link to="/Mine" className={`${styles.link} ${this.props.tab.mine}`}>
-                    <i className='iconfont icon-wode'/>
+                    <i className='iconfont icon-wodetouxiang'/>
                     <s>我的</s>
                 </Link>
                 <div className={styles.addBtnContainer} style = {this.state.active ? {'display': 'block'}:{'display': 'none'}}>
                     <div className={styles.shadow}/>
-                    <div className={`${styles.addBtn} ${styles.addBtn1}`}>
+                    <Link to="/Discover" className={`${styles.addBtn} ${styles.addBtn1}`}>
                         <div className={styles.iconContainer}>
-                            <i className='iconfont icon-xiexin'/>
+                            <i className='iconfont icon-faxian'/>
                         </div>
-                        <div className={styles.title}>写菜谱</div>
-                        <div className={styles.describe}>与大家分享美食做法</div>
-                    </div>
-                    <div className={`${styles.addBtn} ${styles.addBtn2}`}>
+                        <div className={styles.title}>去发现</div>
+                        <div className={styles.describe}>看看大家分享的美食</div>
+                    </Link>
+                    <Link to="/Market" className={`${styles.addBtn} ${styles.addBtn2}`}>
                         <div className={styles.iconContainer}>
                             <i className='iconfont icon-jishi2'/>
                         </div>
                         <div className={styles.title}>逛市集</div>
                         <div className={styles.describe}>写点烘焙用品和工具</div>
-                    </div>
-                    <div className={`${styles.addBtn} ${styles.addBtn3}`}>
+                    </Link>
+                    <Link to="/MineUpload" className={`${styles.addBtn} ${styles.addBtn3}`}>
                         <div className={styles.iconContainer}>
                             <i className='iconfont icon-05'/>
                         </div>
                         <div className={styles.title}>发动态</div>
                         <div className={styles.describe}>晒美食、晒生活</div>
-                    </div>
+                    </Link>
                     <div className={styles.closeBtn} onClick={click}>
                         <i className='iconfont icon-cross'/>
                     </div>

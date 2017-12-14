@@ -3,21 +3,23 @@
   padding:24px 20px;
   font-size: 44px;
   background-color: #fff;
+  border-bottom: 1px solid #eee;/*no*/
   >i{
     display: inline-block;
     font-size: 44px;
     vertical-align: top;
+    color: #333;
   }
   .title{
     display: inline-block;
     position: relative;
-    overflow: hidden;
     font-size: 36px;
     color: #333;
     vertical-align: top;
     width:586px;
-    height:62px;
+    height:40px;
     text-align: center;
+    font-weight: 500;
   }
   .left{
     padding-top: 8px;

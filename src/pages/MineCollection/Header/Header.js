@@ -6,7 +6,7 @@ export default class Header extends Component {
     render() {
         return (
             <div className={styles.container}>
-                <i className={`iconfont icon-koba ${styles.left}`}/>
+                <i className={`iconfont icon-chevron-copy-copy-copy-copy-copy-copy ${styles.left}`}/>
                 <div className={styles.title}>
                     我收藏的菜谱
                 </div>

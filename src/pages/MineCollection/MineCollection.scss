@@ -84,19 +84,18 @@
         }
         >i{
           float: right;
-          font-size: 34px;
+          font-size: 60px;
           color: #f4ab1e;
-          height:100px;
-          line-height: 100px;
-          margin-right: 26px;
+          position: relative;
+          top:30px;
         }
       }
     }
   }
   .btn{
-    margin:46px 40px 0;
+    margin:46px 26px 0;
     div{
-      width:670px;
+      width:698px;
       height:96px;
       text-align: center;
       line-height: 96px;

@@ -15,15 +15,17 @@
         width:80px;
         height:94px;
         line-height: 94px;
+        margin-right: 40px;
       }
       input{
         float: left;
         font-size: 32px;
         height:94px;
         line-height: 94px;
+        margin-top: 2px;
       }
     }
-    .btn{
+    .login{
       margin-top:40px;
       div{
         width:100%;
@@ -37,11 +39,19 @@
       }
     }
   }
-  .describe{
+  .others{
     font-size: 28px;
     color: #999;
     text-align: center;
     margin-top: 25px;
+    padding-left: 36px;
+    padding-right: 36px;
+    .left{
+      float: left;
+    }
+    .right{
+      float: right;
+    }
   }
   .otherLogin{
     position: absolute;
@@ -84,13 +94,13 @@
       overflow: hidden;
       .btn{
         float: left;
-        margin-left: 100px;
+        width:33%;
         margin-top: 56px;
         margin-bottom: 70px;
         img{
           display: block;
-          width:120px;
-          height:120px;
+          width:87px;
+          height:70px;
           margin:0 auto;
         }
         span{
@@ -98,6 +108,19 @@
           font-size: 28px;
           color: #333;
           margin-top: 20px;
+          text-align: center;
+        }
+      }
+      .btn:nth-child(2){
+        img{
+          width:62px;
+          height:70px;
+        }
+      }
+      .btn:nth-child(3){
+        img{
+          width:82px;
+          height:72px;
         }
       }
     }

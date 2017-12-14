@@ -6,11 +6,11 @@ export default class Header extends Component {
     render() {
         return (
             <div className={styles.container}>
-                <i className={`iconfont icon-caidan ${styles.left}`}/>
+                <i className={`iconfont icon-chevron-copy-copy-copy-copy-copy-copy ${styles.left}`}/>
                 <div className={styles.title}>
                     蛋糕
                 </div>
-                <i className={`iconfont icon-sousuo1 ${styles.right}`}/>
+                <i className='iconfont icon-koba'/>
             </div>
         )
     }

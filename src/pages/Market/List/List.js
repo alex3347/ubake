@@ -45,12 +45,13 @@ export default class List extends Component {
                                              alt=""/>
                                         <div className={styles.itemRight}>
                                             <div className={styles.up}>{item.name}</div>
-                                            <div className={styles.middle}>￥{item.price}</div>
                                             <div className={styles.down}>
-                                                <div className={styles.downLeft}>{item.sold}人购买</div>
+                                                <div className={styles.downLeft}>
+                                                    <div className={styles.price}>￥{item.price}</div>
+                                                    <div className={styles.sold}>{item.sold}人购买</div>
+                                                </div>
                                                 <div className={styles.downRight}>
                                                     <i className='iconfont icon-gouwuche'/>
-                                                    <div className={styles.btn}>立即购买</div>
                                                 </div>
                                             </div>
                                         </div>

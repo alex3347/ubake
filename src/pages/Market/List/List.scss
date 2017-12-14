@@ -21,7 +21,7 @@
   .itemContainer{
     padding:0 26px;
     .item{
-      padding:26px 0;
+      padding:26px 0 10px;
       overflow: hidden;
       border-bottom:1px solid #eee;
       .itemLeft{
@@ -37,38 +37,33 @@
           line-height: 40px;
           color: #333;
         }
-        .middle{
-          font-size: 30px;
-          color: #fb5454;
-          height:50px;
-          line-height: 50px;
-          font-weight: bold;
-        }
         .down{
           overflow: hidden;
+          padding-top: 48px;
+          vertical-align: bottom;
           .downLeft{
             float: left;
             font-size: 24px;
             color: #999;
+            .price{
+              float: left;
+              font-size: 30px;
+              color: #fb5454;
+              font-weight: bold;
+              margin-right: 50px;
+            }
+            .sold{
+              float: right;
+            }
           }
           .downRight{
             float: right;
-            width:192px;
             i{
-              font-size: 40px;
+              font-size: 60px;
               float: left;
               color: #f4ab1e;
-            }
-            .btn{
-              width:120px;
-              height:44px;
-              line-height: 44px;
-              float: right;
-              font-size: 24px;
-              color: #fff;
-              background-color: #f4ab1e;
-              text-align: center;
-              border-radius: 8px;
+              position: relative;
+              top:-20px;
             }
           }
         }

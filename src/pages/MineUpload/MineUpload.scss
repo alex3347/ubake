@@ -84,13 +84,6 @@
         }
       }
     }
-    .itemListDescribe{
-      height:100px;
-      line-height: 100px;
-      font-size: 28px;
-      color: #f4ab1e;
-      padding-left: 60px;
-    }
   }
   .down{
     .title{
@@ -104,7 +97,7 @@
       overflow: hidden;
       .shareListItem{
         float: left;
-        margin-left: 94px;
+        width:33%;
         img{
           display: block;
           width:60px;
@@ -116,6 +109,13 @@
           font-size: 24px;
           color: #333;
           margin-top: 20px;
+          text-align: center;
+        }
+      }
+      .shareListItem:nth-child(2){
+        img{
+          width:77px;
+          height:62px;
         }
       }
     }

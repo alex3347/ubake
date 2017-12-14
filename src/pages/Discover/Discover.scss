@@ -5,7 +5,6 @@
     padding-bottom: 102px;
     .tab{
       height:80px;
-      border-bottom: 1px solid #eee;/*no*/
       font-size: 34px;
       background-color: #fff;
       .btnContainer{
@@ -31,7 +30,7 @@
     }
     .item{
       padding:26px 26px 30px;
-      margin-bottom: 20px;
+      margin-top: 20px;
       background-color: #fff;
       overflow: hidden;
       .imgContainer{
@@ -83,20 +82,20 @@
           overflow: hidden;
           height:36px;
           line-height:36px;
-          padding-top: 20px;
+          padding-top: 26px;
           .left{
             font-size: 24px;
             color: #b0b0b0;
             float: left;
           }
           .right{
-            width:170px;
+            width:180px;
             float: right;
             font-size: 32px;
             .comment{
               float: left;
               i{
-                font-size: 28px;
+                font-size: 30px;
                 color: #b0b0b0;
               }
               s{
@@ -109,7 +108,7 @@
             .praise{
               float: right;
               i{
-                font-size: 32px;
+                font-size: 40px;
                 color: #b0b0b0;
               }
               s{

@@ -19,6 +19,8 @@ import MineUpload from 'bundle-loader?lazy&name=notFound!pages/MineUpload/MineUp
 import MineSet from 'bundle-loader?lazy&name=notFound!pages/MineSet/MineSet';
 import MineCollection from 'bundle-loader?lazy&name=notFound!pages/MineCollection/MineCollection';
 import Login from 'bundle-loader?lazy&name=notFound!pages/Login/Login';
+import Register from 'bundle-loader?lazy&name=notFound!pages/Register/Register';
+import FindPwd from 'bundle-loader?lazy&name=notFound!pages/FindPwd/FindPwd';
 
 const createComponent = (component) => (match) => (
     <Bundle load={component}>
@@ -43,6 +45,8 @@ export default () => (
             <Route path="/MineSet" component={createComponent(MineSet)}/>
             <Route path="/MineCollection" component={createComponent(MineCollection)}/>
             <Route path="/Login" component={createComponent(Login)}/>
+            <Route path="/Register" component={createComponent(Register)}/>
+            <Route path="/FindPwd" component={createComponent(FindPwd)}/>
             <Route component={createComponent(NotFound)}/>
         </Switch>
 );

@@ -8,14 +8,12 @@ class Header extends Component {
     render() {
         return (
             <div className={styles.container}>
-                <i className={`iconfont icon-caidan ${styles.left}`}/>
                 <div className={styles.inputContainer}>
                     <input type="text"  placeholder="搜索食谱" onFocus={() => this.props.focus()}/>
                     {
                         this.props.header.hasFocus ? null : <i className='iconfont icon-sousuo'/>
                     }
                 </div>
-                <i className={`iconfont icon-fanhui ${styles.right}`}/>
             </div>
         )
     }
