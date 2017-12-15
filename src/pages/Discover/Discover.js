@@ -55,12 +55,16 @@ class Discover extends Component {
                         content.map((item, index) => {
                                 return(
                                     <div className={styles.item} key={index}>
-                                        <div className={styles.imgContainer}>
-                                            <img src={require('./images/avatar'+(index+1)+'.png')} alt=""/>
+                                        <div className={styles.up}>
+                                            <div className={styles.imgContainer}>
+                                                <img src={require('./images/avatar'+(index+1)+'.png')} alt=""/>
+                                            </div>
+                                            <div className={styles.contentContainer}>
+                                                <div className={styles.name}>{item.name}</div>
+                                                <div className={styles.time}>{item.time}</div>
+                                            </div>
                                         </div>
-                                        <div className={styles.detail}>
-                                            <div className={styles.title}>{item.name}</div>
-                                            <div className={styles.time}>{item.time}</div>
+                                        <div className={styles.down}>
                                             <div className={styles.describe}><i>#{item.group}#</i>{item.content}</div>
                                             <div className={styles.product}>
                                                 <img src={require('./images/product'+(index+3)+'.png')} alt=""/>

@@ -21,6 +21,10 @@ import MineCollection from 'bundle-loader?lazy&name=notFound!pages/MineCollectio
 import Login from 'bundle-loader?lazy&name=notFound!pages/Login/Login';
 import Register from 'bundle-loader?lazy&name=notFound!pages/Register/Register';
 import FindPwd from 'bundle-loader?lazy&name=notFound!pages/FindPwd/FindPwd';
+import SearchResult from 'bundle-loader?lazy&name=notFound!pages/SearchResult/SearchResult';
+import MineFocus from 'bundle-loader?lazy&name=notFound!pages/MineFocus/MineFocus';
+import MineFans from 'bundle-loader?lazy&name=notFound!pages/MineFans/MineFans';
+import MineWorks from 'bundle-loader?lazy&name=notFound!pages/MineWorks/MineWorks';
 
 const createComponent = (component) => (match) => (
     <Bundle load={component}>
@@ -47,6 +51,10 @@ export default () => (
             <Route path="/Login" component={createComponent(Login)}/>
             <Route path="/Register" component={createComponent(Register)}/>
             <Route path="/FindPwd" component={createComponent(FindPwd)}/>
+            <Route path="/SearchResult" component={createComponent(SearchResult)}/>
+            <Route path="/MineFocus" component={createComponent(MineFocus)}/>
+            <Route path="/MineFans" component={createComponent(MineFans)}/>
+            <Route path="/MineWorks" component={createComponent(MineWorks)}/>
             <Route component={createComponent(NotFound)}/>
         </Switch>
 );

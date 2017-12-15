@@ -8,9 +8,9 @@ export default class Header extends Component {
             <div className={styles.container}>
                 <i className={`iconfont icon-chevron-copy-copy-copy-copy-copy-copy ${styles.left}`}/>
                 <div className={styles.title}>
-                    购物车
+                    我的作品
                 </div>
-                <i className={styles.right}>编辑</i>
+                <i className={`iconfont icon-koba ${styles.right}`}/>
             </div>
         )
     }
