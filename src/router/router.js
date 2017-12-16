@@ -25,6 +25,7 @@ import SearchResult from 'bundle-loader?lazy&name=notFound!pages/SearchResult/Se
 import MineFocus from 'bundle-loader?lazy&name=notFound!pages/MineFocus/MineFocus';
 import MineFans from 'bundle-loader?lazy&name=notFound!pages/MineFans/MineFans';
 import MineWorks from 'bundle-loader?lazy&name=notFound!pages/MineWorks/MineWorks';
+import MarketListDetail from 'bundle-loader?lazy&name=notFound!pages/MarketListDetail/MarketListDetail';
 
 const createComponent = (component) => (match) => (
     <Bundle load={component}>
@@ -55,6 +56,7 @@ export default () => (
             <Route path="/MineFocus" component={createComponent(MineFocus)}/>
             <Route path="/MineFans" component={createComponent(MineFans)}/>
             <Route path="/MineWorks" component={createComponent(MineWorks)}/>
+            <Route path="/MarketListDetail" component={createComponent(MarketListDetail)}/>
             <Route component={createComponent(NotFound)}/>
         </Switch>
 );
