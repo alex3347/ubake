@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Header from './Header/Header';
+import {Link} from 'react-router-dom';
 
 const styles = require('./MineSet.scss');
 
@@ -43,9 +44,9 @@ export default class MineSet extends Component {
                     <div className={styles.itemName}>关于U bake</div>
                     <i className='iconfont icon-jiantou'/>
                 </div>
-                <div className={styles.btn}>
+                <Link to="/" className={styles.btn}>
                     <div>退出登录</div>
-                </div>
+                </Link>
             </div>
         )
     }

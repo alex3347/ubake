@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import styles from './List.scss'
 import Loading from 'components/Loading/Loading';
+import {Link} from 'react-router-dom';
 
 
 export default class List extends Component {
@@ -39,7 +40,7 @@ export default class List extends Component {
                             :
                             this.props.category.map((item, index) => {
                                 return (
-                                    <div className={styles.item} key={index}>
+                                    <Link to='/MarketListDetail' className={styles.item} key={index}>
                                         <img className={styles.itemLeft}
                                              src={require('../images/item' + ((index + 1) % 2 ? 2 : 1) + '.png')}
                                              alt=""/>
@@ -55,7 +56,7 @@ export default class List extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 )
                             })
                     }

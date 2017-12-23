@@ -23,8 +23,8 @@ export default class Login extends Component {
                     </div>
                 </div>
                 <div className={styles.others}>
-                    <div className={styles.left}>忘记密码</div>
-                    <div className={styles.right}>立即注册</div>
+                    <Link to="/FindPwd" className={styles.left}>忘记密码</Link>
+                    <Link to="/Register" className={styles.right}>立即注册</Link>
                 </div>
                 <div className={styles.otherLogin}>
                     <div className={styles.titleContainer}>

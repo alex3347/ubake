@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 import styles from './Master.scss'
 
@@ -14,10 +15,12 @@ export default class Master extends Component {
                         this.props.master.map((item, index) => {
                             return(
                                 <li className={styles.listItem} key={index}>
-                                    <div className={styles.avatarContainer}>
-                                        <img src={require('../images/avatar'+(index+1)+'.png')} alt=""/>
-                                    </div>
-                                    <div className={styles.name}>{item.name}</div>
+                                    <Link to='/MineWorks'>
+                                        <div className={styles.avatarContainer}>
+                                            <img src={require('../images/avatar'+(index+1)+'.png')} alt=""/>
+                                        </div>
+                                        <div className={styles.name}>{item.name}</div>
+                                    </Link>
                                 </li>
                             )
                         })

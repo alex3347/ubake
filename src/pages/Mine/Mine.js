@@ -24,18 +24,18 @@ export default class Home extends Component {
                         </div>
                     </div>
                     <div className={styles.itemList}>
-                        <div className={styles.item}>
+                        <Link to='/MineWorks' className={styles.item}>
                             <div className={styles.num}>3</div>
                             <div className={styles.name}>作品</div>
-                        </div>
-                        <Link to='/MineCollection' className={styles.item}>
+                        </Link>
+                        <Link to='/MineFocus' className={styles.item}>
                             <div className={styles.num}>5</div>
                             <div className={styles.name}>关注</div>
                         </Link>
-                        <div className={styles.item}>
+                        <Link to='/MineFans' className={styles.item}>
                             <div className={styles.num}>5</div>
                             <div className={styles.name}>粉丝</div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 <div className={styles.down}>
@@ -46,13 +46,13 @@ export default class Home extends Component {
                         </div>
                         <i className='iconfont icon-jiantou'/>
                     </div>
-                    <div className={styles.downItem}>
+                    <Link to='/MineCollection' className={styles.downItem}>
                         <div className={styles.downItemName}>
                             <i className='iconfont icon-Collection-wx3'/>
                             <div>我的收藏</div>
                         </div>
                         <i className='iconfont icon-jiantou'/>
-                    </div>
+                    </Link>
                     <div className={styles.downItem}>
                         <div className={styles.downItemName}>
                             <i className='iconfont icon-youhui'/>
