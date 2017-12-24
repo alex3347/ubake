@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './Header.scss'
 import {focus} from 'actions/home/header';
+import {Link} from 'react-router-dom';
 
 import {connect} from 'react-redux';
 
@@ -8,12 +9,10 @@ class Header extends Component {
     render() {
         return (
             <div className={styles.container}>
-                <div className={styles.inputContainer}>
-                    <input type="text"  placeholder="搜索食谱" onFocus={() => this.props.focus()}/>
-                    {
-                        this.props.header.hasFocus ? null : <i className='iconfont icon-sousuo'/>
-                    }
-                </div>
+                <Link to='/SearchResult' className={styles.inputContainer}>
+                    <input type="text"  placeholder="搜索食谱" disabled/>
+                    <i className='iconfont icon-sousuo'/>
+                </Link>
             </div>
         )
     }

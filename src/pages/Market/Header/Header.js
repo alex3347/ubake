@@ -13,7 +13,9 @@ export default class Header extends Component {
                 <div className={styles.title}>
                     市集
                 </div>
-                <i className={`iconfont icon-gouwuche ${styles.right}`}/>
+                <Link to='/Buy'>
+                    <i className={`iconfont icon-gouwuche ${styles.right}`}/>
+                </Link>
             </div>
         )
     }
