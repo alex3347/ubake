@@ -35,7 +35,12 @@ class Tab extends Component {
                     <s>发现</s>
                 </Link>
                 <Link to="/Mine" className={`${styles.link} ${this.props.tab.mine}`}>
-                    <i className='iconfont icon-wodetouxiang'/>
+                    {
+                        this.props.tab.mine ?
+                        <i className='iconfont icon-wode-jiechuzhuangtai'/>
+                        :
+                        <i className='iconfont icon-wodetouxiang'/>
+                    }
                     <s>我的</s>
                 </Link>
                 <div className={styles.addBtnContainer} style = {this.state.active ? {'display': 'block'}:{'display': 'none'}}>

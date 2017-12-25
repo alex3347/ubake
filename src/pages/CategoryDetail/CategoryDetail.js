@@ -37,7 +37,7 @@ class CategoryDetail extends Component {
                             <div>{categoryDetail.praise}人赞过</div>
                         </div>
                         <div className={styles.control}>
-                            <div className={styles.btn}>
+                            <div className={styles.btn} onClick={()=>{}}>
                                 <i className='iconfont icon-shoucang'/>
                                 <s>收藏</s>
                             </div>

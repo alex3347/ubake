@@ -3,20 +3,23 @@
   .iconContainer{
     text-align: center;
     padding-top: 200px;
-    .loading{
-      font-size: 100px;
+    i{
       display: inline-block;
+      width:150px;
+      height:150px;
+      &:before{
+        display: inline-block;
+        width:150px;
+        height:150px;
+        font-size: 150px;
+      }
+    }
+    .loading{
       color: #f4ab1e;
-      width:100px;
-      height:100px;
       animation: change 2s infinite linear;
     }
     .reload{
-      font-size: 100px;
-      display: inline-block;
       color: #eee;
-      width:100px;
-      height:100px;
     }
   }
   @keyframes change {
@@ -26,7 +29,7 @@
   }
   .info{
     text-align: center;
-    font-size: 12px;
+    font-size: 24px;
     color: #999;
     margin-top: 20px;
     padding-bottom: 200px;
