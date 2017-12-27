@@ -9,6 +9,7 @@ import homeDetail from 'reducers/homeDetail';
 import categoryDetail from 'reducers/categoryDetail';
 import market from 'reducers/market';
 import discover from 'reducers/discover';
+import registerStepFirst from 'reducers/registerStepFirst';
 
 
 export default combineReducers({
@@ -20,5 +21,6 @@ export default combineReducers({
     homeDetail,
     categoryDetail,
     market,
-    discover
+    discover,
+    registerStepFirst
 });

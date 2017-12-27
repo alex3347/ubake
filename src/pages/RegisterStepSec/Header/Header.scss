@@ -1,0 +1,38 @@
+.container {
+  overflow: hidden;
+  padding:24px 20px;
+  font-size: 44px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;/*no*/
+  >i{
+    display: inline-block;
+    font-size: 44px;
+    vertical-align: top;
+    color: #333;
+  }
+  .title{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    font-size: 36px;
+    color: #333;
+    vertical-align: top;
+    width:580px;
+    height:40px;
+    text-align: center;
+    font-weight: 500;
+  }
+  .left{
+    padding-top: 6px;
+    margin-right: 17px;
+    font-size: 37px;
+    color: #333;
+  }
+  .right{
+    display: inline-block;
+    font-size: 36px;
+    color: #f4ab1e;
+    font-style: normal;
+  }
+}
+

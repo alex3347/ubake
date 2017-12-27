@@ -16,7 +16,7 @@ export default class Login extends Component {
                     </div>
                     <div className={styles.item}>
                         <span>密码</span>
-                        <input type="text" placeholder="请输入密码"/>
+                        <input type="password" placeholder="请输入密码"/>
                     </div>
                     <div className={styles.login}>
                         <div>登录</div>
@@ -24,7 +24,7 @@ export default class Login extends Component {
                 </div>
                 <div className={styles.others}>
                     <Link to="/FindPwd" className={styles.left}>忘记密码</Link>
-                    <Link to="/Register" className={styles.right}>立即注册</Link>
+                    <Link to="/RegisterStepFirst" className={styles.right}>立即注册</Link>
                 </div>
                 <div className={styles.otherLogin}>
                     <div className={styles.titleContainer}>

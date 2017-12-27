@@ -19,7 +19,8 @@ import MineUpload from 'bundle-loader?lazy&name=notFound!pages/MineUpload/MineUp
 import MineSet from 'bundle-loader?lazy&name=notFound!pages/MineSet/MineSet';
 import MineCollection from 'bundle-loader?lazy&name=notFound!pages/MineCollection/MineCollection';
 import Login from 'bundle-loader?lazy&name=notFound!pages/Login/Login';
-import Register from 'bundle-loader?lazy&name=notFound!pages/Register/Register';
+import RegisterStepFirst from 'bundle-loader?lazy&name=notFound!pages/RegisterStepFirst/RegisterStepFirst';
+import RegisterStepSec from 'bundle-loader?lazy&name=notFound!pages/RegisterStepSec/RegisterStepSec';
 import FindPwd from 'bundle-loader?lazy&name=notFound!pages/FindPwd/FindPwd';
 import SearchResult from 'bundle-loader?lazy&name=notFound!pages/SearchResult/SearchResult';
 import MineFocus from 'bundle-loader?lazy&name=notFound!pages/MineFocus/MineFocus';
@@ -50,7 +51,8 @@ export default () => (
             <Route path="/MineSet" component={createComponent(MineSet)}/>
             <Route path="/MineCollection" component={createComponent(MineCollection)}/>
             <Route path="/Login" component={createComponent(Login)}/>
-            <Route path="/Register" component={createComponent(Register)}/>
+            <Route path="/RegisterStepFirst" component={createComponent(RegisterStepFirst)}/>
+            <Route path="/RegisterStepSec" component={createComponent(RegisterStepSec)}/>
             <Route path="/FindPwd" component={createComponent(FindPwd)}/>
             <Route path="/SearchResult" component={createComponent(SearchResult)}/>
             <Route path="/MineFocus" component={createComponent(MineFocus)}/>
