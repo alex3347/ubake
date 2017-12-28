@@ -10,6 +10,7 @@ import categoryDetail from 'reducers/categoryDetail';
 import market from 'reducers/market';
 import discover from 'reducers/discover';
 import registerStepFirst from 'reducers/registerStepFirst';
+import registerStepSec from 'reducers/registerStepSec';
 
 
 export default combineReducers({
@@ -22,5 +23,6 @@ export default combineReducers({
     categoryDetail,
     market,
     discover,
-    registerStepFirst
+    registerStepFirst,
+    registerStepSec
 });

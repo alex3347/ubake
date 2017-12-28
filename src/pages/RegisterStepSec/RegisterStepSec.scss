@@ -21,7 +21,6 @@
       input{
         float: left;
         font-size: 32px;
-        width:260px;
         height:94px;
         line-height: 94px;
         margin-top: 2px;
@@ -46,6 +45,11 @@
         color: #f4ab1e;
         font-style: normal;
       }
+    }
+    .tip{
+      font-size: 24px;
+      color: #ff6a5a;
+      margin-top: 20px;
     }
     .login{
       margin-top:40px;
