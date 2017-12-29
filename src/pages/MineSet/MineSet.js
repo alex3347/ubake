@@ -1,10 +1,17 @@
 import React, {Component} from 'react';
 import Header from './Header/Header';
-import {Link} from 'react-router-dom';
+
+import PropTypes from 'prop-types';
 
 const styles = require('./MineSet.scss');
 
 export default class MineSet extends Component {
+    static contextTypes = {
+        router: PropTypes.object
+    }
+    constructor(props, context) {
+        super(props, context);
+    }
     render() {
         return (
             <div className={styles.bac}>
@@ -44,9 +51,11 @@ export default class MineSet extends Component {
                     <div className={styles.itemName}>关于U bake</div>
                     <i className='iconfont icon-jiantou'/>
                 </div>
-                <Link to="/" className={styles.btn}>
+                <div className={styles.btn} onClick={()=>{
+                    this.context.router.history.replace('/Login')
+                }}>
                     <div>退出登录</div>
-                </Link>
+                </div>
             </div>
         )
     }

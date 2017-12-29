@@ -28,17 +28,17 @@ class RegisterStepSec extends Component {
                     </div>
                     <div className={styles.item}>
                         <span>密码</span>
-                        <input ref='pwd' type="text" placeholder="请输入至少6位字符"/>
+                        <input ref='pwd' type="password" placeholder="请输入至少6位字符"/>
                     </div>
                     <div className={styles.item}>
                         <span>确认密码</span>
-                        <input ref='pwdEnsure' type="text" placeholder="请输入至少6位字符"/>
+                        <input ref='pwdEnsure' type="password" placeholder="请输入至少6位字符"/>
                     </div>
                     {
                         nameTip ? <div className={styles.tip}>请输入4-16位字母，数字，下划线，减号组成的用户名</div> : null
                     }
                     {
-                        pwdTip ? <div className={styles.tip}>请输入6-20个字母、数字、下划线组成的密码</div> : null
+                        pwdTip ? <div className={styles.tip}>请输入6-16位, 数字, 字母, 字符至少包含两种, 同时不能包含中文和空格的密码</div> : null
                     }
                     {
                         pwdSameTip ? <div className={styles.tip}>两次密码不相同</div> : null

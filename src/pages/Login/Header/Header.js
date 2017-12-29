@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import styles from './Header.scss'
 import PropTypes from 'prop-types';
 
-
 export default class Header extends Component {
     static contextTypes = {
         router: PropTypes.object

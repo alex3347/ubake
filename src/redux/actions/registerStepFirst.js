@@ -88,7 +88,7 @@ export function submit(refs,context) {
                     () => {
                         //没有配置服务端，暂时默认通过认证,直接跳转到下一步
                         // dispatch(verificationCodeTipControl());
-                        // context.router.history.push('/RegisterStepSec')
+                        context.router.history.push('/RegisterStepSec')
                     }
                 )
         }else{

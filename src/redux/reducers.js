@@ -11,6 +11,8 @@ import market from 'reducers/market';
 import discover from 'reducers/discover';
 import registerStepFirst from 'reducers/registerStepFirst';
 import registerStepSec from 'reducers/registerStepSec';
+import login from 'reducers/login';
+import mine from 'reducers/mine';
 
 
 export default combineReducers({
@@ -24,5 +26,7 @@ export default combineReducers({
     market,
     discover,
     registerStepFirst,
-    registerStepSec
+    registerStepSec,
+    login,
+    mine
 });

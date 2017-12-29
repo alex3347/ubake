@@ -6,11 +6,21 @@ export default class Header extends Component {
     render() {
         return (
             <div className={styles.container}>
-                <i className={`iconfont icon-tj ${styles.left}`}/>
+                {
+                    this.props.logined ?
+                    <Link to="/MineUpload" className={`iconfont icon-tj ${styles.left}`}/>
+                    :
+                    <i className={`iconfont icon-koba ${styles.left}`}/>
+                }
                 <div className={styles.title}>
                     我的
                 </div>
-                <Link to="/MineSet" className={`iconfont icon-shezhi ${styles.right}`}/>
+                {
+                    this.props.logined ?
+                        <Link to="/MineSet" className={`iconfont icon-shezhi ${styles.right}`}/>
+                        :
+                        <i className={`iconfont icon-koba ${styles.right}`}/>
+                }
             </div>
         )
     }

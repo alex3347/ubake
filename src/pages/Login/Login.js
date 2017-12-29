@@ -1,25 +1,41 @@
 import React, {Component} from 'react';
 import Header from './Header/Header';
-import {Link} from 'react-router-dom';
 
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {request} from "actions/login";
+
+import PropTypes from 'prop-types';
 
 const styles = require('./Login.scss');
 
-export default class Login extends Component {
+class Login extends Component {
+    static contextTypes = {
+        router: PropTypes.object
+    }
+    constructor(props, context) {
+        super(props, context);
+    }
     render() {
+        const {tip} = this.props.login;
         return (
             <div className={styles.bac}>
                 <Header/>
                 <div className={styles.inputContainer}>
                     <div className={styles.item}>
                         <span>账号</span>
-                        <input type="text" placeholder="用户名/手机号"/>
+                        <input ref='name' type="text" placeholder="用户名/手机号"/>
                     </div>
                     <div className={styles.item}>
                         <span>密码</span>
-                        <input type="password" placeholder="请输入密码"/>
+                        <input ref='pwd' type="password" placeholder="请输入密码"/>
                     </div>
-                    <div className={styles.login}>
+                    {
+                        tip ? <div className={styles.tip}>请输入正确的用户名和密码</div> : null
+                    }
+                    <div className={styles.login} onClick={()=>{
+                        this.props.request(this.refs,this.context)
+                    }}>
                         <div>登录</div>
                     </div>
                 </div>
@@ -50,3 +66,7 @@ export default class Login extends Component {
         )
     }
 }
+
+export default connect((state) => ({
+    login: state.login
+}), {request})(Login);

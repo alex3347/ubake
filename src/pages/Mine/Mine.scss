@@ -3,7 +3,6 @@
   .up{
     overflow: hidden;
     background-color: #fff;
-    margin-bottom: 24px;
     .container{
       width:750px;
       height:387px;
@@ -45,8 +44,12 @@
 
       }
     }
+  }
+  .down{
     .itemList{
       overflow: hidden;
+      background-color: #fff;
+      margin-bottom: 24px;
       .item{
         width:33%;
         height:110px;
@@ -65,8 +68,6 @@
         }
       }
     }
-  }
-  .down{
     .downItem{
       display: block;
       overflow: hidden;
@@ -113,6 +114,41 @@
           left:-24px;
         }
       }
+    }
+  }
+  .control{
+    text-align: center;
+    padding-bottom: 350px;
+    .describe{
+      font-size: 24px;
+      color: #999;
+      text-align: center;
+      padding-left: 180px;
+      padding-right: 180px;
+      margin-top: 200px;
+      margin-bottom: 60px;
+    }
+    .btn{
+      display: inline-block;
+      width:240px;
+      height:88px;
+      border:1px solid #f4ab1e;/*no*/
+      border-radius: 9px;
+      text-align: center;
+      line-height:88px;
+      color: #f4ab1e;
+      s{
+        display: inline-block;
+        text-decoration: none;
+        font-size: 30px;
+        margin-left: 17px;
+        vertical-align: top;
+      }
+    }
+    .btn:last-child{
+      margin-left: 100px;
+      border-color: #999;
+      color: #666;
     }
   }
 }

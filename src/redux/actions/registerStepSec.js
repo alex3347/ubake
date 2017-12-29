@@ -32,7 +32,7 @@ function init() {
 export function submit(refs,context) {
     return function (dispatch) {
         let param1 = /^[a-zA-Z0-9_-]{4,16}$/.test(refs.name.value)
-        let param2 = /^(\w){6,20}$/.test(refs.pwd.value)
+        let param2 = /(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^[^\s\u4e00-\u9fa5]{6,16}$/.test(refs.pwd.value)
 
         if( param1 && param2 && (refs.pwd.value === refs.pwdEnsure.value)){
             dispatch(init())
@@ -55,7 +55,7 @@ export function submit(refs,context) {
                 ).catch(
                     () => {
                         //没有配置服务端，暂时默认通过认证,直接跳转到下一步
-                        context.router.history.replace('/')
+                        context.router.history.replace('/Login')
                     }
                 )
         }else{
