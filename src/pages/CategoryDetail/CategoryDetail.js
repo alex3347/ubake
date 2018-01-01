@@ -6,7 +6,7 @@ import Loading from 'components/Loading/Loading';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import {request} from "actions/categoryDetail";
+import {request,collect,support,toLocalStorage} from "actions/categoryDetail";
 
 const styles = require('./CategoryDetail.scss');
 
@@ -16,7 +16,7 @@ class CategoryDetail extends Component {
         this.props.request(arg);
     }
     render() {
-        const {categoryDetail,reload,loading} = this.props.categoryDetail;
+        const {categoryDetail,reload,loading,collected,supported} = this.props.categoryDetail;
         return (
             loading ?
                 <Loading reload={reload} request={this.props.request}/>
@@ -37,13 +37,33 @@ class CategoryDetail extends Component {
                             <div>{categoryDetail.praise}人赞过</div>
                         </div>
                         <div className={styles.control}>
-                            <div className={styles.btn} onClick={()=>{}}>
-                                <i className='iconfont icon-shoucang'/>
-                                <s>收藏</s>
+                            <div className={styles.btn} onClick={()=>{this.props.collect()}}>
+                                {
+                                    collected ?
+                                    <div className={styles.clicked}>
+                                        <i className='iconfont icon-shoucang'/>
+                                        <s>已收藏</s>
+                                    </div>
+                                    :
+                                    <div className={styles.unclick}>
+                                        <i className='iconfont icon-shoucang'/>
+                                        <s>收藏</s>
+                                    </div>
+                                }
                             </div>
-                            <div className={styles.btn}>
-                                <i className='iconfont icon-dianzan'/>
-                                <s>点赞</s>
+                            <div className={styles.btn} onClick={()=>{this.props.support()}}>
+                                {
+                                    supported ?
+                                        <div className={styles.clicked}>
+                                            <i className='iconfont icon-dianzan'/>
+                                            <s>已点赞</s>
+                                        </div>
+                                        :
+                                        <div className={styles.unclick}>
+                                            <i className='iconfont icon-dianzan'/>
+                                            <s>点赞</s>
+                                        </div>
+                                }
                             </div>
                         </div>
                         <div className={styles.list}>
@@ -60,7 +80,9 @@ class CategoryDetail extends Component {
                             }
                         </div>
                         <div className={styles.buy}>
-                            <Link to="/Buy" className={styles.btn}>
+                            <Link to='/Buy' className={styles.btn} onClick={()=>{
+                                this.props.toLocalStorage()
+                            }}>
                                 <i className='iconfont icon-gouwuche'/>
                                 <s>一键买齐</s>
                             </Link>
@@ -74,4 +96,4 @@ class CategoryDetail extends Component {
 
 export default connect((state) => ({
     categoryDetail: state.categoryDetail,
-}), {request})(CategoryDetail);
+}), {request,collect,support,toLocalStorage})(CategoryDetail);

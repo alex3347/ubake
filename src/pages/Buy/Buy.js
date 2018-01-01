@@ -4,75 +4,59 @@ import Footer from './Footer/Footer';
 
 const styles = require('./Buy.scss');
 
-export default class Buy extends Component {
+import {connect} from 'react-redux';
+import {renderList,edit,remove,radioControl} from "actions/buy";
+
+class Buy extends Component {
+    componentDidMount(){
+        this.props.renderList()
+    }
     render() {
+        const {list,edit,radioList} = this.props.buy
         return (
             <div>
-                <Header/>
+                <Header editEvent={this.props.edit} list={list} edit={edit}/>
                 <div className={styles.itemContainer}>
-                    <div className={styles.item}>
-                        <div className={styles.itemDetail}>
-                            <div className={styles.itemLeft}>
-                                <input type="radio"/>
-                                <img src={require('./images/item1.png')} alt=""/>
-                            </div>
-                            <div className={styles.itemRight}>
-                                <div className={styles.content}>
-                                    <div className={styles.detail}>舒克曼  威士宝黄油200g</div>
-                                    <div className={styles.price}>￥16.8<s>20.5</s></div>
+                    {
+                        list.map((item, index) => {
+                            return(
+                                <div className={styles.item} key={index}>
+                                    <div className={styles.itemDetail}>
+                                        <div className={styles.itemDetailContainer} onClick={()=>{
+                                            this.props.radioControl(index)
+                                        }}>
+                                            <div className={styles.itemLeft}>
+                                                <input type="radio" checked={radioList[index]}/>
+                                                <img src={require('./images/item'+(index+1)+'.png')} alt=""/>
+                                            </div>
+                                            <div className={styles.itemRight}>
+                                                <div className={styles.content}>
+                                                    <div className={styles.detail}>{item}</div>
+                                                    <div className={styles.price}>￥15<s>20</s></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {
+                                            edit ?
+                                            <div className={styles.delete} onClick={()=>{
+                                                this.props.remove(index)
+                                            }}>删除</div>
+                                            :
+                                            null
+                                        }
+                                    </div>
                                 </div>
-                                <div className={styles.delete}>删除</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.item}>
-                        <div className={styles.itemDetail}>
-                            <div className={styles.itemLeft}>
-                                <input type="radio"/>
-                                <img src={require('./images/item2.png')} alt=""/>
-                            </div>
-                            <div className={styles.itemRight}>
-                                <div className={styles.content}>
-                                    <div className={styles.detail}>舒克曼  威士宝黄油200g</div>
-                                    <div className={styles.price}>￥16.8<s>20.5</s></div>
-                                </div>
-                                <div className={styles.delete}>删除</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.item}>
-                        <div className={styles.itemDetail}>
-                            <div className={styles.itemLeft}>
-                                <input type="radio"/>
-                                <img src={require('./images/item3.png')} alt=""/>
-                            </div>
-                            <div className={styles.itemRight}>
-                                <div className={styles.content}>
-                                    <div className={styles.detail}>舒克曼  威士宝黄油200g</div>
-                                    <div className={styles.price}>￥16.8<s>20.5</s></div>
-                                </div>
-                                <div className={styles.delete}>删除</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.item}>
-                        <div className={styles.itemDetail}>
-                            <div className={styles.itemLeft}>
-                                <input type="radio"/>
-                                <img src={require('./images/item4.png')} alt=""/>
-                            </div>
-                            <div className={styles.itemRight}>
-                                <div className={styles.content}>
-                                    <div className={styles.detail}>舒克曼  威士宝黄油200g</div>
-                                    <div className={styles.price}>￥16.8<s>20.5</s></div>
-                                </div>
-                                <div className={styles.delete}>删除</div>
-                            </div>
-                        </div>
-                    </div>
+                            )
+                        })
+                    }
                 </div>
                 <Footer/>
             </div>
         )
     }
 }
+
+
+export default connect((state) => ({
+    buy: state.buy,
+}), {renderList,edit,remove,radioControl})(Buy);

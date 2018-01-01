@@ -1,10 +1,12 @@
-import {BEGIN_REQUEST, REQUEST_SUCCESS, REQUEST_FAIL} from 'actions/categoryDetail';
+import {BEGIN_REQUEST, REQUEST_SUCCESS, REQUEST_FAIL, COLLECT, SUPPORT} from 'actions/categoryDetail';
 
 
 const initState = {
     categoryDetail:{},
     reload:false,
     loading: true,
+    collected:false,
+    supported:false
 };
 
 export default function reducer(state = initState, action) {
@@ -27,6 +29,17 @@ export default function reducer(state = initState, action) {
                 ...state,
                 reload:true,
                 loading: true,
+            };
+        case COLLECT:
+            return {
+                ...state,
+                collected:!state.collected
+
+            };
+        case SUPPORT:
+            return {
+                ...state,
+                supported:!state.supported
             };
         default:
             return state;

@@ -13,6 +13,7 @@ import registerStepFirst from 'reducers/registerStepFirst';
 import registerStepSec from 'reducers/registerStepSec';
 import login from 'reducers/login';
 import mine from 'reducers/mine';
+import buy from 'reducers/buy';
 
 
 export default combineReducers({
@@ -28,5 +29,6 @@ export default combineReducers({
     registerStepFirst,
     registerStepSec,
     login,
-    mine
+    mine,
+    buy,
 });

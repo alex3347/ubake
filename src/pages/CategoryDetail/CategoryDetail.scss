@@ -40,41 +40,43 @@
     }
   }
   .btn{
-    width:295px;
-    height:96px;
-    border:1px solid #f4ab1e;/*no*/
-    border-radius: 9px;
-    text-align: center;
-    line-height:96px;
-    color: #f4ab1e;
-    i{
-      display: inline-block;
-      font-size: 36px;
-      vertical-align: top;
-      padding-top: 4px;
+    width:297px;
+    height:98px;
+    >div{
+      width:295px;
+      height:96px;
+      border:1px solid #f4ab1e;/*no*/
+      border-radius: 9px;
+      text-align: center;
+      line-height:96px;
+      color: #f4ab1e;
+      i{
+        display: inline-block;
+        font-size: 36px;
+        vertical-align: top;
+        padding-top: 4px;
+      }
+      s{
+        display: inline-block;
+        text-decoration: none;
+        font-size: 30px;
+        margin-left: 17px;
+        vertical-align: top;
+      }
     }
-    s{
-      display: inline-block;
-      text-decoration: none;
-      font-size: 30px;
-      margin-left: 17px;
-      vertical-align: top;
+    .clicked{
+      border-color: #ff6a5a;
+      color: #fff;
+      background-color: #ff6a5a;
     }
   }
   .control{
     text-align: center;
-    div{
+    >div{
       display: inline-block;
-      border:1px solid #ff6a5a;/*no*/
     }
-    div:first-child{
-      background-color: #ff6a5a;
-      color: #fff;
-
-    }
-    div:last-child{
+    >div:last-child{
       margin-left: 50px;
-      color: #ff6a5a;
     }
   }
   .list{
@@ -109,8 +111,22 @@
     margin-bottom: 80px;
     .btn{
       display: inline-block;
+      width:295px;
+      height:96px;
+      border:1px solid #f4ab1e;/*no*/
+      border-radius: 9px;
+      text-align: center;
+      line-height:96px;
+      color: #f4ab1e;
       i{
         font-size: 48px;
+      }
+      s{
+        display: inline-block;
+        text-decoration: none;
+        font-size: 30px;
+        margin-left: 17px;
+        vertical-align: top;
       }
     }
   }

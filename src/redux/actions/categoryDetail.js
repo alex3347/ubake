@@ -1,6 +1,8 @@
 export const BEGIN_REQUEST = "categoryDetail/BEGIN_REQUEST";
 export const REQUEST_SUCCESS = "categoryDetail/REQUEST_SUCCESS";
 export const REQUEST_FAIL = "categoryDetail/REQUEST_FAIL";
+export const COLLECT = "categoryDetail/COLLECT";
+export const SUPPORT = "categoryDetail/SUPPORT";
 
 function beginRequest() {
     return {
@@ -19,6 +21,18 @@ function requestSuccess(payload) {
 function requestFail() {
     return {
         type: REQUEST_FAIL
+    }
+}
+
+function collectType() {
+    return {
+        type: COLLECT
+    }
+}
+
+function supportType() {
+    return {
+        type: SUPPORT
     }
 }
 
@@ -45,5 +59,34 @@ export function request(arg) {
                     dispatch(requestFail());
                 }
             )
+    }
+}
+
+export function collect() {
+    return function (dispatch) {
+        dispatch(collectType());
+    }
+}
+
+export function support() {
+    return function (dispatch,getState) {
+        dispatch(supportType());
+        let state = getState().categoryDetail
+        if(state.supported){
+            state.categoryDetail.praise++
+        }else{
+            state.categoryDetail.praise--
+        }
+    }
+}
+
+export function toLocalStorage() {
+    return function (dispatch,getState) {
+        let nameArray = getState().categoryDetail.categoryDetail.list.reduce(function (pre,cur) {
+            pre.push(cur.name)
+            return pre
+        },[])
+
+        localStorage.setItem('buyList',JSON.stringify(nameArray))
     }
 }

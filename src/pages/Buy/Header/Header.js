@@ -17,7 +17,19 @@ export default class Header extends Component {
                 <div className={styles.title}>
                     购物车
                 </div>
-                <i className={styles.right}>编辑</i>
+                {
+                    !this.props.list.length ?
+                        null
+                        :
+                        <i className={styles.right} onClick={this.props.editEvent}>
+                            {
+                                !this.props.edit ?
+                                    '编辑'
+                                    :
+                                    '完成'
+                            }
+                        </i>
+                }
             </div>
         )
     }
