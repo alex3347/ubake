@@ -21,7 +21,9 @@ export default class Header extends Component {
                     !this.props.list.length ?
                         null
                         :
-                        <i className={styles.right} onClick={this.props.editEvent}>
+                        <i className={styles.right} onClick={()=>{
+                            this.props.editEvent(this.props.refs)
+                        }}>
                             {
                                 !this.props.edit ?
                                     '编辑'

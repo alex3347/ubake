@@ -2,6 +2,10 @@ export const RENDER_LIST = "buy/RENDER_LIST";
 export const EDIT = "buy/EDIT";
 export const REMOVE = "buy/REMOVE";
 export const RADIO_CONTROL = "buy/RADIO_CONTROL";
+export const SELECT_ALL = "buy/SELECT_ALL";
+export const UNSELECT_ALL = "buy/UNSELECT_ALL";
+export const CALC = "buy/CALC";
+export const CALC_ALL = "buy/CALC_ALL";
 
 
 
@@ -25,9 +29,37 @@ function removeType(arg) {
     }
 }
 
-function radioControlType() {
+function radioControlType(arg) {
     return {
         type: RADIO_CONTROL,
+        arg:arg
+    }
+}
+
+function selectAllType(arg) {
+    return {
+        type: SELECT_ALL,
+        arg:arg
+    }
+}
+
+function unSelectAllType() {
+    return {
+        type: UNSELECT_ALL,
+    }
+}
+
+function calcType(arg) {
+    return {
+        type: CALC,
+        arg:arg
+    }
+}
+
+function calcAllType(arg) {
+    return {
+        type: CALC_ALL,
+        arg:arg
     }
 }
 
@@ -42,29 +74,97 @@ export function renderList() {
     }
 }
 
-export function edit() {
-    return function (dispatch) {
-
+export function edit(refs) {
+    return function (dispatch,getState) {
+        let tempRadioList = getState().buy.radioList
+        for(let key in refs){
+            tempRadioList[key] = false
+            refs[key].checked = false
+        }
         dispatch(editType())
+        dispatch(radioControlType(tempRadioList))
 
     }
 }
 
 export function remove(index) {
     return function (dispatch,getState) {
+        //修改本地存储目录
         let list = getState().buy.list
         list.splice(index,1)
         let newList = list
         dispatch(removeType(newList))
 
         localStorage.setItem('buyList',JSON.stringify(newList));
+
+        //修改radio控制顺序，因为index发生变化
+        let radioList = getState().buy.radioList
+        radioList.splice(index,1)
+        let newRadioList = radioList
+
     }
 }
 
-export function radioControl(index) {
+export function radioControl(ref,refs,price) {
     return function (dispatch,getState) {
-        getState().buy.radioList[index] = true
-        console.log(getState().buy.radioList)
-        // dispatch(radioControlType())
+
+        console.log(ref,refs,price)
+        //修改点击事件对应radioList数组中的值
+        let radioListTemp = getState().buy.radioList
+        radioListTemp[ref.name] = !radioListTemp[ref.name]
+        ref.checked = radioListTemp[ref.name]
+
+        dispatch(radioControlType(radioListTemp))
+
+        //根据上一步中的状态改变总价
+        radioListTemp[ref.name] ? null : (price = -price)
+
+        dispatch(calcType(price))
+
+        //复制radioList数组，去除最后全选对应的布尔值
+        let copyRadioListTemp = radioListTemp.slice()
+        copyRadioListTemp.pop()
+
+
+        //如果copyRadioList数组中有任意一个为false，即未全选
+        if(copyRadioListTemp.every(function (value) {
+                return value
+            })){
+            radioListTemp[radioListTemp.length-1] = true
+            dispatch(selectAllType(radioListTemp))
+            refs.selectAll.checked = true
+        }else{
+            radioListTemp[radioListTemp.length-1] = false
+            dispatch(unSelectAllType())
+            refs.selectAll.checked = false
+        }
+
+    }
+}
+
+export function selectAll(refs,price) {
+    return function (dispatch,getState) {
+
+        let radioListTemp = getState().buy.radioList
+
+        if(!getState().buy.selectAll){
+            for(let key in refs){
+                radioListTemp[key] = true
+                refs[key].checked = true
+            }
+            //计算所有商品价格总和
+            let total = price.reduce(function (pre,cur) {
+                return pre+cur
+            })
+            dispatch(calcAllType(total))
+        }else{
+            for(let key in refs){
+                radioListTemp[key] = false
+                refs[key].checked = false
+            }
+            dispatch(calcAllType())
+        }
+
+        dispatch(selectAllType(radioListTemp))
     }
 }
