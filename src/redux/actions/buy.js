@@ -114,27 +114,27 @@ export function radioControl(ref,refs,price) {
         radioListTemp[ref.name] = !radioListTemp[ref.name]
         ref.checked = radioListTemp[ref.name]
 
+
         dispatch(radioControlType(radioListTemp))
 
+
         //根据上一步中的状态改变总价
+        price = parseInt(price)
         radioListTemp[ref.name] ? null : (price = -price)
 
         dispatch(calcType(price))
 
-        //复制radioList数组，去除最后全选对应的布尔值
-        let copyRadioListTemp = radioListTemp.slice()
-        copyRadioListTemp.pop()
 
 
         //如果copyRadioList数组中有任意一个为false，即未全选
-        if(copyRadioListTemp.every(function (value) {
+        if(radioListTemp.every(function (value) {
                 return value
             })){
-            radioListTemp[radioListTemp.length-1] = true
+            radioListTemp['selectAll'] = true
             dispatch(selectAllType(radioListTemp))
             refs.selectAll.checked = true
         }else{
-            radioListTemp[radioListTemp.length-1] = false
+            radioListTemp['selectAll'] = false
             dispatch(unSelectAllType())
             refs.selectAll.checked = false
         }
@@ -153,9 +153,14 @@ export function selectAll(refs,price) {
                 refs[key].checked = true
             }
             //计算所有商品价格总和
-            let total = price.reduce(function (pre,cur) {
-                return pre+cur
-            })
+            let list = getState().buy.list
+
+            let total = list.reduce(function (pre,cur) {
+                return pre + parseInt(cur.price)
+            },parseInt(list[0].price))
+
+            total = total - parseInt(list[0].price)
+
             dispatch(calcAllType(total))
         }else{
             for(let key in refs){

@@ -14,6 +14,7 @@ import registerStepSec from 'reducers/registerStepSec';
 import login from 'reducers/login';
 import mine from 'reducers/mine';
 import buy from 'reducers/buy';
+import marketListDetail from 'reducers/marketListDetail';
 
 
 export default combineReducers({
@@ -31,4 +32,5 @@ export default combineReducers({
     login,
     mine,
     buy,
+    marketListDetail,
 });

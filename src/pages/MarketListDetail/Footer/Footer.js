@@ -10,7 +10,16 @@ export default class Footer extends Component {
                     <div>收藏</div>
                 </div>
                 <div className={styles.right}>立即购买</div>
-                <div className={styles.middle}>加入购物车</div>
+                <div className={styles.middle} onClick={()=>{
+                    this.props.toLocalstorage()
+                }}>
+                    {
+                        this.props.collected ?
+                        '已加入购物车'
+                        :
+                        '加入购物车'
+                    }
+                </div>
             </div>
         )
     }

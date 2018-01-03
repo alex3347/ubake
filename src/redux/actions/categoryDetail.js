@@ -82,11 +82,8 @@ export function support() {
 
 export function toLocalStorage() {
     return function (dispatch,getState) {
-        let nameArray = getState().categoryDetail.categoryDetail.list.reduce(function (pre,cur) {
-            pre.push(cur.name)
-            return pre
-        },[])
+        let list = getState().categoryDetail.categoryDetail.list
 
-        localStorage.setItem('buyList',JSON.stringify(nameArray))
+        localStorage.setItem('buyList',JSON.stringify(list))
     }
 }

@@ -4,9 +4,13 @@ import Footer from './Footer/Footer';
 
 import styles from './MarketListDetail.scss'
 
-export default class MarketListDetail extends Component {
+import {connect} from 'react-redux';
+import {toLocalstorage} from "actions/marketListDetail";
+
+class MarketListDetail extends Component {
 
     render() {
+        const {collected} = this.props.marketListDetail
         return (
                 <div className={styles.container}>
                     <Header/>
@@ -36,8 +40,13 @@ export default class MarketListDetail extends Component {
                             <img src={require('./images/contentTemp.png')} alt=""/>
                         </div>
                     </div>
-                    <Footer/>
+                    <Footer collected={collected} toLocalstorage={this.props.toLocalstorage}/>
                 </div>
         )
     }
 }
+
+
+export default connect((state) => ({
+    marketListDetail: state.marketListDetail,
+}), {toLocalstorage})(MarketListDetail);
