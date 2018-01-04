@@ -1,4 +1,4 @@
-import {BEGIN_REQUEST, REQUEST_SUCCESS, REQUEST_FAIL, COLLECT, SUPPORT} from 'actions/categoryDetail';
+import {BEGIN_REQUEST, REQUEST_SUCCESS, REQUEST_FAIL, COLLECT, SUPPORT,LOGINED_IN,LOGINED_OUT} from 'actions/categoryDetail';
 
 
 const initState = {
@@ -6,7 +6,8 @@ const initState = {
     reload:false,
     loading: true,
     collected:false,
-    supported:false
+    supported:false,
+    logined:false,
 };
 
 export default function reducer(state = initState, action) {
@@ -40,6 +41,16 @@ export default function reducer(state = initState, action) {
             return {
                 ...state,
                 supported:!state.supported
+            };
+        case LOGINED_IN:
+            return {
+                ...state,
+                logined:true
+            };
+        case LOGINED_OUT:
+            return {
+                ...state,
+                logined:false
             };
         default:
             return state;

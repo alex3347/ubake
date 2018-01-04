@@ -6,7 +6,7 @@ import Loading from 'components/Loading/Loading';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import {request,collect,support,toLocalStorage} from "actions/categoryDetail";
+import {request,collect,support,toLocalStorage,login} from "actions/categoryDetail";
 
 const styles = require('./CategoryDetail.scss');
 
@@ -14,9 +14,10 @@ class CategoryDetail extends Component {
     componentDidMount(){
         const arg = this.props.match.params.id;
         this.props.request(arg);
+        this.props.login();
     }
     render() {
-        const {categoryDetail,reload,loading,collected,supported} = this.props.categoryDetail;
+        const {categoryDetail,reload,loading,collected,supported,logined} = this.props.categoryDetail;
         return (
             loading ?
                 <Loading reload={reload} request={this.props.request}/>
@@ -88,7 +89,7 @@ class CategoryDetail extends Component {
                             </Link>
                         </div>
                     </div>
-                    <Footer/>
+                    <Footer logined={logined}/>
                 </div>
         )
     }
@@ -96,4 +97,4 @@ class CategoryDetail extends Component {
 
 export default connect((state) => ({
     categoryDetail: state.categoryDetail,
-}), {request,collect,support,toLocalStorage})(CategoryDetail);
+}), {request,collect,support,toLocalStorage,login})(CategoryDetail);

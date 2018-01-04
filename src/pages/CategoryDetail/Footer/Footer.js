@@ -5,11 +5,9 @@ import {Link} from 'react-router-dom';
 export default class Footer extends Component {
     render() {
         return (
-            <Link to='/MineUpload' className={styles.container}>
+            <Link to={this.props.logined ? '/MineUpload' : '/Login'} className={styles.container}>
                 <i className='iconfont icon-xiangji'/>
-                <s>分享我的这道美食
-                    {/*<input type="file" />*/}
-                </s>
+                <s>分享我的这道美食</s>
             </Link>
         )
     }

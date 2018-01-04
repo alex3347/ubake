@@ -60,7 +60,7 @@ class Buy extends Component {
                             </div>
                             <div className={styles.footer}>
                                 <div className={styles.left} onClick={()=>{
-                                    this.props.selectAll(this.refs,price)
+                                    this.props.selectAll(this.refs)
                                 }}>
                                     <input type="radio" ref='selectAll'/>
                                     <s>全选</s>

@@ -15,7 +15,10 @@ export default class Master extends Component {
                         this.props.master.map((item, index) => {
                             return(
                                 <li className={styles.listItem} key={index}>
-                                    <Link to='/MineWorks'>
+                                    <Link to={{
+                                        pathname:'/MineWorks',
+                                        state:{name:item.name}
+                                    }}>
                                         <div className={styles.avatarContainer}>
                                             <img src={require('../images/avatar'+(index+1)+'.png')} alt=""/>
                                         </div>

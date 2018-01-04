@@ -1,8 +1,9 @@
-import {COLLECTED} from 'actions/marketListDetail';
+import {COLLECTED,CHECK_CLICKED} from 'actions/marketListDetail';
 
 
 const initState = {
-    collected:false
+    collected:false,
+    clicked:false
 };
 
 export default function reducer(state = initState, action) {
@@ -12,7 +13,11 @@ export default function reducer(state = initState, action) {
                 ...state,
                 collected:!state.collected
             };
-
+        case CHECK_CLICKED:
+            return {
+                ...state,
+                clicked:!state.clicked
+            };
         default:
             return state;
     }

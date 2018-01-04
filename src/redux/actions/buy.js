@@ -142,7 +142,7 @@ export function radioControl(ref,refs,price) {
     }
 }
 
-export function selectAll(refs,price) {
+export function selectAll(refs) {
     return function (dispatch,getState) {
 
         let radioListTemp = getState().buy.radioList

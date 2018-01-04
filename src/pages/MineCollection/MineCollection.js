@@ -10,7 +10,7 @@ export default class MineCollection extends Component {
             <div className={styles.bac}>
                 <Header/>
                 <div className={styles.detailList}>
-                    <Link to="/CategoryDetail" className={styles.item}>
+                    <Link to="/CategoryDetail/1" className={styles.item}>
                         <div className={styles.itemLeft}>
                             <img src={require('./images/item1.png')} alt=""/>
                         </div>

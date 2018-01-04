@@ -3,6 +3,8 @@ export const REQUEST_SUCCESS = "categoryDetail/REQUEST_SUCCESS";
 export const REQUEST_FAIL = "categoryDetail/REQUEST_FAIL";
 export const COLLECT = "categoryDetail/COLLECT";
 export const SUPPORT = "categoryDetail/SUPPORT";
+export const LOGINED_IN = "mine/LOGINED_IN";
+export const LOGINED_OUT = "mine/LOGINED_OUT";
 
 function beginRequest() {
     return {
@@ -33,6 +35,18 @@ function collectType() {
 function supportType() {
     return {
         type: SUPPORT
+    }
+}
+
+function loginedIn() {
+    return {
+        type: LOGINED_IN
+    }
+}
+
+function loginedOut() {
+    return {
+        type: LOGINED_OUT
     }
 }
 
@@ -85,5 +99,18 @@ export function toLocalStorage() {
         let list = getState().categoryDetail.categoryDetail.list
 
         localStorage.setItem('buyList',JSON.stringify(list))
+    }
+}
+
+export function login() {
+    return function (dispatch,) {
+
+        //判断token是否存在
+        if(localStorage.getItem('token')){
+            dispatch(loginedIn());
+        }else{
+            dispatch(loginedOut());
+        }
+
     }
 }

@@ -7,12 +7,11 @@ const styles = require('./Home.scss');
 
 export default class Home extends Component {
     render() {
-        let arg = {name:'home'}
         return (
             <div>
                 <Header/>
                 <Category/>
-                <Tab {...arg}/>
+                <Tab name={'home'}/>
             </div>
         )
     }

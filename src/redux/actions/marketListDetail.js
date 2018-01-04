@@ -1,4 +1,5 @@
 export const COLLECTED = "buy/COLLECTED";
+export const CHECK_CLICKED = "buy/CHECK_CLICKED";
 
 function collectedType() {
     return {
@@ -6,10 +7,14 @@ function collectedType() {
     }
 }
 
+function checkClickedType() {
+    return {
+        type: CHECK_CLICKED
+    }
+}
 export function toLocalstorage() {
     return function (dispatch,getState) {
 
-        console.log(1)
         let localStorageBuyList = localStorage.getItem('buyList')
 
         if(getState().marketListDetail.collected){
@@ -41,6 +46,14 @@ export function toLocalstorage() {
         }
 
         dispatch(collectedType())
+
+    }
+}
+
+export function checkClicked() {
+    return function (dispatch) {
+
+        dispatch(checkClickedType())
 
     }
 }

@@ -13,17 +13,19 @@
   .discribe{
     font-size: 24px;
     color: #fff;
+    width:57px;
     height:33px;
     line-height: 33px;
     text-align: center;
+    margin:0 auto;
     i{
       display: inline-block;
       width:57px;
       height: 33px;
       background-color: #f4ab1e;
       font-style: normal;
-      font-size: 18px;
-      padding:4px;
+      font-size: 24px;
+      vertical-align: middle;
     }
   }
   .evaluate{

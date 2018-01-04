@@ -6,9 +6,11 @@ import styles from './MineWorks.scss'
 
 export default class MineWorks extends Component {
     render() {
+        let pageNameControl = false
+        this.props.location.state ? (pageNameControl=true) :null
         return (
             <div className={styles.container}>
-                <Header/>
+                <Header pageNameControl={pageNameControl}/>
                 <div className={styles.content}>
                     <div className={styles.item}>
                         <div className={styles.up}>
@@ -16,7 +18,7 @@ export default class MineWorks extends Component {
                                 <img src={require('./images/avatar1.png')} alt=""/>
                             </div>
                             <div className={styles.contentContainer}>
-                                <div className={styles.name}>这是名字</div>
+                                <div className={styles.name}>{this.props.location.state ? this.props.location.state.name : '里谷粒春天'}</div>
                                 <div className={styles.time}>11-27</div>
                             </div>
                         </div>

@@ -7,8 +7,8 @@
     border-bottom:1px solid #eee;/*no*/
     div{
       width:120px;
-      height:97px;
-      line-height:97px;
+      height:94px;
+      line-height:94px;
       text-align: center;
       float: left;
       margin-left: 14px;
@@ -44,17 +44,21 @@
           vertical-align: bottom;
           .downLeft{
             float: left;
-            font-size: 24px;
-            color: #999;
             .price{
               float: left;
               font-size: 30px;
+              line-height: 30px;
               color: #fb5454;
               font-weight: bold;
               margin-right: 50px;
+              vertical-align: middle;
             }
             .sold{
               float: right;
+              font-size: 24px;
+              line-height: 30px;
+              color: #999;
+              vertical-align: middle;
             }
           }
           .downRight{

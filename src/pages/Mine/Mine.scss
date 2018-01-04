@@ -1,5 +1,6 @@
 .bac{
   background-color: #f3f3f3;
+  min-height:100vh;
   .up{
     overflow: hidden;
     background-color: #fff;
@@ -141,7 +142,6 @@
         display: inline-block;
         text-decoration: none;
         font-size: 30px;
-        margin-left: 17px;
         vertical-align: top;
       }
     }

@@ -15,7 +15,13 @@ export default class Header extends Component {
             <div className={styles.container}>
                 <i onClick={() => {this.context.router.history.goBack()}} className={`iconfont icon-chevron-copy-copy-copy-copy-copy-copy ${styles.left}`}/>
                 <div className={styles.title}>
-                    我的作品
+                    {
+                        !this.props.pageNameControl ?
+                            '我的作品'
+                            :
+                            'ta的动态'
+
+                    }
                 </div>
                 <i className={`iconfont icon-koba ${styles.right}`}/>
             </div>

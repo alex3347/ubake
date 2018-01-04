@@ -5,12 +5,12 @@ import Footer from './Footer/Footer';
 import styles from './MarketListDetail.scss'
 
 import {connect} from 'react-redux';
-import {toLocalstorage} from "actions/marketListDetail";
+import {toLocalstorage,checkClicked} from "actions/marketListDetail";
 
 class MarketListDetail extends Component {
 
     render() {
-        const {collected} = this.props.marketListDetail
+        const {collected,clicked} = this.props.marketListDetail
         return (
                 <div className={styles.container}>
                     <Header/>
@@ -40,7 +40,7 @@ class MarketListDetail extends Component {
                             <img src={require('./images/contentTemp.png')} alt=""/>
                         </div>
                     </div>
-                    <Footer collected={collected} toLocalstorage={this.props.toLocalstorage}/>
+                    <Footer collected={collected} toLocalstorage={this.props.toLocalstorage} clicked={clicked} checkClicked={this.props.checkClicked}/>
                 </div>
         )
     }
@@ -49,4 +49,4 @@ class MarketListDetail extends Component {
 
 export default connect((state) => ({
     marketListDetail: state.marketListDetail,
-}), {toLocalstorage})(MarketListDetail);
+}), {toLocalstorage,checkClicked})(MarketListDetail);

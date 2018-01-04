@@ -6,8 +6,6 @@ import Bundle from './Bundle';
 import Loading from 'components/Loading/Loading';
 
 import Home from 'bundle-loader?lazy&name=home!pages/Home/Home';
-import Counter from 'bundle-loader?lazy&name=counter!pages/Counter/Counter';
-import UserInfo from 'bundle-loader?lazy&name=userInfo!pages/UserInfo/UserInfo';
 import NotFound from 'bundle-loader?lazy&name=notFound!pages/NotFound/NotFound';
 import HomeDetail from 'bundle-loader?lazy&name=notFound!pages/HomeDetail/HomeDetail';
 import CategoryDetail from 'bundle-loader?lazy&name=notFound!pages/CategoryDetail/CategoryDetail';
@@ -39,8 +37,6 @@ const createComponent = (component) => (match) => (
 export default () => (
         <Switch>
             <Route exact path="/" component={createComponent(Home)}/>
-            <Route path="/counter" component={createComponent(Counter)}/>
-            <Route path="/userinfo" component={createComponent(UserInfo)}/>
             <Route path="/HomeDetail" component={createComponent(HomeDetail)}/>
             <Route path="/CategoryDetail/:id" component={createComponent(CategoryDetail)}/>
             <Route path="/Buy" component={createComponent(Buy)}/>
