@@ -8,27 +8,27 @@ import Loading from 'components/Loading/Loading';
 
 import {connect} from 'react-redux';
 
-import {request,requestCategory} from "actions/market";
+import {request,requestCategory,checkTipStatus} from "actions/market";
 
 import styles from './Market.scss'
 
 class Market extends Component {
     componentDidMount(){
-        this.props.request();
+        this.props.request()
+        this.props.checkTipStatus()
     }
     render() {
-        const {suggest,category,reload,loading,categoryReload,categoryLoading} = this.props.market;
+        const {tipStatus,suggest,category,reload,loading,categoryReload,categoryLoading} = this.props.market;
 
-        let arg = {name:'market'}
         return (
             loading ?
                 <Loading reload={reload} request={this.props.request}/>
                 :
                 <div className={styles.container}>
-                    <Header/>
+                    <Header tipStatus={tipStatus}/>
                     <Suggest suggest={suggest}/>
                     <List category={category} requestCategory={this.props.requestCategory} categoryReload={categoryReload} categoryLoading={categoryLoading}/>
-                    <Tab {...arg}/>
+                    <Tab name={'market'}/>
                 </div>
         )
     }
@@ -36,4 +36,4 @@ class Market extends Component {
 
 export default connect((state) => ({
     market: state.market,
-}), {request,requestCategory})(Market);
+}), {request,requestCategory,checkTipStatus})(Market);

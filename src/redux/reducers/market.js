@@ -1,8 +1,8 @@
 import {BEGIN_REQUEST, REQUEST_SUGGEST_SUCCESS, REQUEST_CATEGORY_SUCCESS, REQUEST_ALL_SUCCESS, REQUEST_FAIL,
-    BEGIN_CATEGORY_REQUEST, REQUEST_CATEGORY_ALONE_SUCCESS,REQUEST_CATEGORY_FAIL} from 'actions/market';
-
+    BEGIN_CATEGORY_REQUEST, REQUEST_CATEGORY_ALONE_SUCCESS,REQUEST_CATEGORY_FAIL,CHECK_TIP_STATUS_TYPE} from 'actions/market';
 
 const initState = {
+    tipStatus:'',
     suggest: [],
     category: [],
     reload: false,
@@ -57,6 +57,11 @@ export default function reducer(state = initState, action) {
             return {
                 ...state,
                 categoryReload: true
+            };
+        case CHECK_TIP_STATUS_TYPE:
+            return {
+                ...state,
+                tipStatus: action.arg
             };
         default:
             return state;

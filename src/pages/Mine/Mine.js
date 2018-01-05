@@ -14,7 +14,6 @@ class Mine extends Component {
         this.props.init()
     }
     render() {
-        let arg = {name:'mine'}
         const {logined} = this.props.mine;
 
         return (
@@ -46,15 +45,15 @@ class Mine extends Component {
                         <div className={styles.down}>
                             <div className={styles.itemList}>
                                 <Link to='/MineWorks' className={styles.item}>
-                                    <div className={styles.num}>3</div>
+                                    <div className={styles.num}>1</div>
                                     <div className={styles.name}>作品</div>
                                 </Link>
                                 <Link to='/MineFocus' className={styles.item}>
-                                    <div className={styles.num}>5</div>
+                                    <div className={styles.num}>2</div>
                                     <div className={styles.name}>关注</div>
                                 </Link>
                                 <Link to='/MineFans' className={styles.item}>
-                                    <div className={styles.num}>5</div>
+                                    <div className={styles.num}>2</div>
                                     <div className={styles.name}>粉丝</div>
                                 </Link>
                             </div>
@@ -98,7 +97,7 @@ class Mine extends Component {
                             </Link>
                         </div>
                 }
-                <Tab {...arg}/>
+                <Tab name={'mine'}/>
             </div>
         )
     }

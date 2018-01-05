@@ -21,7 +21,6 @@ class Discover extends Component {
     }
 
     render() {
-        let arg = {name:'discover'}
         const {content,reload,loading} = this.props.discover;
 
         const click = (e)=>{
@@ -90,7 +89,7 @@ class Discover extends Component {
                             })
                     }
                 </div>
-                <Tab {...arg}/>
+                <Tab name={'discover'}/>
             </div>
         )
     }

@@ -1,5 +1,5 @@
 import {DISPLAY_CONTROL,INIT} from 'actions/tab';
-
+import styles from 'components/Tab/Tab.scss'
 
 const initState = {
     home:'',
@@ -8,9 +8,7 @@ const initState = {
     mine:'',
     active: false
 };
-/*
-* reducer
- */
+
 export default function reducer(state = initState, action) {
     switch (action.type) {
         case DISPLAY_CONTROL:
@@ -19,10 +17,13 @@ export default function reducer(state = initState, action) {
                 active: !state.active
             };
         case INIT:
-            let category = state[action.arg]
             return {
                 ...state,
-                category: 'on'
+                home:'',
+                market:'',
+                discover:'',
+                mine:'',
+                [action.arg]: styles.on
             };
         default:
             return state

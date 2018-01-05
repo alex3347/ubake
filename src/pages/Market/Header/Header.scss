@@ -33,6 +33,19 @@
     margin-left: 17px;
     color: #333;
     font-size: 44px;
+    position: relative;
+
+      &:after {
+        content: '\E6C7';
+        font-size: 10px;/*no*/
+        color: #f00;
+        position: absolute;
+        top:-4px;
+        right:-8px;
+      }
+  }
+  .noTip:after{
+    content:''
   }
 }
 

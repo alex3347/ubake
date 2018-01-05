@@ -77,17 +77,6 @@ class Tab extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    let name = ownProps.name
-    let temp = {
-            ...state.tab,
-        }
-    temp[name] = styles.on
-    return {
-        tab: temp
-    }
-};
-
 export default connect(
     (state) => (
         {tab: state.tab}

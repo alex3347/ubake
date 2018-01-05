@@ -53,7 +53,7 @@
           margin-top: 30px;
           margin-left: 25px;
           .name{
-            font-size: 32px;
+            font-size: 36px;
             color: #333;
             font-weight: 500;
           }
@@ -102,6 +102,7 @@
             i{
               font-size: 44px;
               color: #666;
+              vertical-align: middle;
             }
             s{
               text-decoration: none;
@@ -114,8 +115,6 @@
           .btn:first-child{
             i{
               font-size: 60px;
-              position: relative;
-              top:2px;
             }
           }
           .btn:nth-child(2){

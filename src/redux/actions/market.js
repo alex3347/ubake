@@ -7,6 +7,10 @@ export const REQUEST_FAIL = "market/REQUEST_FAIL";
 export const BEGIN_CATEGORY_REQUEST = "market/BEGIN_CATEGORY_REQUEST";
 export const REQUEST_CATEGORY_ALONE_SUCCESS = "market/REQUEST_CATEGORY_ALONE_SUCCESS";
 export const REQUEST_CATEGORY_FAIL = "market/REQUEST_CATEGORY_FAIL";
+export const CHECK_TIP_STATUS_TYPE = "market/CHECK_TIP_STATUS_TYPE";
+
+import styles from '../../pages/Market/Header/Header.scss'
+
 
 function beginRequest() {
     return {
@@ -39,7 +43,6 @@ function requestFail() {
         type: REQUEST_FAIL
     }
 }
-
 
 export function request() {
     return function (dispatch) {
@@ -120,3 +123,22 @@ export function requestCategory() {
     }
 }
 
+
+function checkTipStatusType(arg) {
+    return {
+        type: CHECK_TIP_STATUS_TYPE,
+        arg:arg || ''
+    }
+}
+
+export function checkTipStatus() {
+    return function (dispatch) {
+        localStorage.getItem('buyList') ?
+        dispatch(checkTipStatusType())
+            :
+        dispatch(checkTipStatusType(styles.noTip))
+
+
+
+    }
+}
