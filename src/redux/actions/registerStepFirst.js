@@ -3,6 +3,7 @@ export const TRY_AGAIN = "registerStepFirst/TRY_AGAIN";
 export const TIME_CONTROL = "registerStepFirst/TIME_CONTROL";
 export const PHONE_NUMBER_TIP_CONTROL = "registerStepFirst/PHONE_NUMBER_TIP_CONTROL";
 export const VERIFICATION_CODE_TIP_CONTROL = "registerStepFirst/VERIFICATION_CODE_TIP_CONTROL";
+export const INIT = "registerStepFirst/INIT";
 
 function firstClick() {
     return {
@@ -35,6 +36,11 @@ function verificationCodeTipControl() {
     }
 }
 
+function initType() {
+    return {
+        type: INIT
+    }
+}
 //发送短信倒数,正则验证手机号
 export function interval(ref) {
     return function (dispatch,getState) {
@@ -88,7 +94,7 @@ export function submit(refs,context) {
                     () => {
                         //没有配置服务端，暂时默认通过认证,直接跳转到下一步
                         // dispatch(verificationCodeTipControl());
-                        context.router.history.push('/RegisterStepSec')
+                        context.router.history.push(context.router.history.location.arg)
                     }
                 )
         }else{
@@ -107,3 +113,8 @@ export function submit(refs,context) {
     }
 }
 
+export function init() {
+    return function (dispatch) {
+        dispatch(initType());
+    }
+}

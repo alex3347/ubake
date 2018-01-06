@@ -10,7 +10,7 @@ class Tab extends Component {
         this.props.init(this.props.name)
     }
     render() {
-        const {home, market, discover, mine, active} = this.props.tab;
+        const {home, market, discover, mine, active,logined} = this.props.tab;
         return (
             <div className={styles.container}>
                 <Link to="/" className={`${styles.link} ${home}`}>
@@ -59,7 +59,7 @@ class Tab extends Component {
                         <div className={styles.title}>逛市集</div>
                         <div className={styles.describe}>写点烘焙用品和工具</div>
                     </Link>
-                    <Link to="/MineUpload" className={`${styles.addBtn} ${styles.addBtn3}`}>
+                    <Link to={logined ? '/MineUpload' : '/Login'} className={`${styles.addBtn} ${styles.addBtn3}`}>
                         <div className={styles.iconContainer}>
                             <i className='iconfont icon-05'/>
                         </div>

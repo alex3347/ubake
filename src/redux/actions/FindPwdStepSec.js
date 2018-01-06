@@ -1,13 +1,6 @@
-export const CHECK_NAME = "registerStepSec/CHECK_NAME";
-export const CHECK_PWD = "registerStepSec/CHECK_PWD";
-export const CHECK_PWD_SAME = "registerStepSec/CHECK_PWD_SAME";
-export const INIT = "registerStepSec/INIT";
-
-function checkNameControl() {
-    return {
-        type: CHECK_NAME
-    }
-}
+export const CHECK_PWD = "FindPwdStepSec/CHECK_PWD";
+export const CHECK_PWD_SAME = "FindPwdStepSec/CHECK_PWD_SAME";
+export const INIT = "FindPwdStepSec/INIT";
 
 function checkPwdControl() {
     return {
@@ -31,10 +24,9 @@ function init() {
 //正则验证用户名，密码，同时检测两次密码是否相同
 export function submit(refs,context) {
     return function (dispatch) {
-        let param1 = /^[a-zA-Z0-9_-]{4,16}$/.test(refs.name.value)
-        let param2 = /(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^[^\s\u4e00-\u9fa5]{6,16}$/.test(refs.pwd.value)
+        let param = /(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^[^\s\u4e00-\u9fa5]{6,16}$/.test(refs.pwd.value)
 
-        if( param1 && param2 && (refs.pwd.value === refs.pwdEnsure.value)){
+        if(param && (refs.pwd.value === refs.pwdEnsure.value)){
             dispatch(init())
             return fetch('',{
                 method: 'POST',
@@ -43,7 +35,6 @@ export function submit(refs,context) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    name: refs.name.value,
                     pwd: refs.pwdEnsure.value,
                     })
                 })
@@ -59,16 +50,7 @@ export function submit(refs,context) {
                     }
                 )
         }else{
-            if(!param1 && !param2){
-                dispatch(checkNameControl());
-                return;
-            }
-            if(!param1){
-                //检查用户名
-                dispatch(checkNameControl());
-                refs.name.focus();
-            }
-            if(!param2){
+            if(!param){
                 //检查密码
                 dispatch(checkPwdControl());
                 refs.pwd.focus();

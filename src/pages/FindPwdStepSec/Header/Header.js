@@ -15,7 +15,7 @@ export default class Header extends Component {
             <div className={styles.container}>
                 <i onClick={() => {this.context.router.history.goBack()}} className={`iconfont icon-chevron-copy-copy-copy-copy-copy-copy ${styles.left}`}/>
                 <div className={styles.title}>
-                    忘记密码
+                    找回密码
                 </div>
                 <i className={styles.right}/>
             </div>

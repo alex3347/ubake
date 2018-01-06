@@ -40,8 +40,14 @@ class Login extends Component {
                     </div>
                 </div>
                 <div className={styles.others}>
-                    <Link to="/FindPwd" className={styles.left}>忘记密码</Link>
-                    <Link to="/RegisterStepFirst" className={styles.right}>立即注册</Link>
+                    <Link to={{
+                        pathname:"/RegisterStepFirst",
+                        arg:'/FindPwdStepSec'
+                        }} className={styles.left}>忘记密码</Link>
+                    <Link to={{
+                        pathname:"/RegisterStepFirst",
+                        arg:'/RegisterStepSec'
+                    }} className={styles.right}>立即注册</Link>
                 </div>
                 <div className={styles.otherLogin}>
                     <div className={styles.titleContainer}>

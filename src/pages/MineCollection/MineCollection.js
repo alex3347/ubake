@@ -10,7 +10,10 @@ export default class MineCollection extends Component {
             <div className={styles.bac}>
                 <Header/>
                 <div className={styles.detailList}>
-                    <Link to="/CategoryDetail/1" className={styles.item}>
+                    <Link to={{
+                        pathname: `/CategoryDetail/1`,
+                        state: { name: '蜂蜜奶油小蛋糕' }
+                    }} className={styles.item}>
                         <div className={styles.itemLeft}>
                             <img src={require('./images/item1.png')} alt=""/>
                         </div>
@@ -23,7 +26,10 @@ export default class MineCollection extends Component {
                             <i className='iconfont icon-jiantou'/>
                         </div>
                     </Link>
-                    <Link to="/CategoryDetail" className={styles.item}>
+                    <Link to={{
+                        pathname: `/CategoryDetail/1`,
+                        state: { name: '蜂蜜奶油小蛋糕' }
+                    }} className={styles.item}>
                         <div className={styles.itemLeft}>
                             <img src={require('./images/item2.png')} alt=""/>
                         </div>
@@ -36,7 +42,10 @@ export default class MineCollection extends Component {
                             <i className='iconfont icon-jiantou'/>
                         </div>
                     </Link>
-                    <Link to="/CategoryDetail" className={styles.item}>
+                    <Link to={{
+                        pathname: `/CategoryDetail/1`,
+                        state: { name: '蜂蜜奶油小蛋糕' }
+                    }} className={styles.item}>
                         <div className={styles.itemLeft}>
                             <img src={require('./images/item3.png')} alt=""/>
                         </div>
@@ -49,7 +58,10 @@ export default class MineCollection extends Component {
                             <i className='iconfont icon-jiantou'/>
                         </div>
                     </Link>
-                    <Link to="/CategoryDetail" className={styles.item}>
+                    <Link to={{
+                        pathname: `/CategoryDetail/1`,
+                        state: { name: '蜂蜜奶油小蛋糕' }
+                    }} className={styles.item}>
                         <div className={styles.itemLeft}>
                             <img src={require('./images/item4.png')} alt=""/>
                         </div>
@@ -63,9 +75,9 @@ export default class MineCollection extends Component {
                         </div>
                     </Link>
                 </div>
-                <div className={styles.btn}>
+                <Link to='/HomeDetail' className={styles.btn}>
                     <div>收藏更多的菜谱</div>
-                </div>
+                </Link>
             </div>
         )
     }

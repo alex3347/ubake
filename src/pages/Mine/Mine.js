@@ -89,7 +89,10 @@ class Mine extends Component {
                         :
                         <div className={styles.control}>
                             <div className={styles.describe}>登录后，你的作品、关注、粉丝会显示在这里，展示给他人</div>
-                            <Link to='/RegisterStepFirst' className={styles.btn} onClick={()=>{}}>
+                            <Link to={{
+                                pathname:"/RegisterStepFirst",
+                                arg:'/RegisterStepSec'
+                            }} className={styles.btn}>
                                 <s>注册</s>
                             </Link>
                             <Link to='/Login' className={styles.btn}>

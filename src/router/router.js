@@ -19,7 +19,7 @@ import MineCollection from 'bundle-loader?lazy&name=notFound!pages/MineCollectio
 import Login from 'bundle-loader?lazy&name=notFound!pages/Login/Login';
 import RegisterStepFirst from 'bundle-loader?lazy&name=notFound!pages/RegisterStepFirst/RegisterStepFirst';
 import RegisterStepSec from 'bundle-loader?lazy&name=notFound!pages/RegisterStepSec/RegisterStepSec';
-import FindPwd from 'bundle-loader?lazy&name=notFound!pages/FindPwd/FindPwd';
+import FindPwdStepSec from 'bundle-loader?lazy&name=notFound!pages/FindPwdStepSec/FindPwdStepSec';
 import SearchResult from 'bundle-loader?lazy&name=notFound!pages/SearchResult/SearchResult';
 import MineFocus from 'bundle-loader?lazy&name=notFound!pages/MineFocus/MineFocus';
 import MineFans from 'bundle-loader?lazy&name=notFound!pages/MineFans/MineFans';
@@ -49,7 +49,7 @@ export default () => (
             <Route path="/Login" component={createComponent(Login)}/>
             <Route path="/RegisterStepFirst" component={createComponent(RegisterStepFirst)}/>
             <Route path="/RegisterStepSec" component={createComponent(RegisterStepSec)}/>
-            <Route path="/FindPwd" component={createComponent(FindPwd)}/>
+            <Route path="/FindPwdStepSec" component={createComponent(FindPwdStepSec)}/>
             <Route path="/SearchResult" component={createComponent(SearchResult)}/>
             <Route path="/MineFocus" component={createComponent(MineFocus)}/>
             <Route path="/MineFans" component={createComponent(MineFans)}/>

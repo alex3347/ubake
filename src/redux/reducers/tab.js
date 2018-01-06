@@ -1,4 +1,4 @@
-import {DISPLAY_CONTROL,INIT} from 'actions/tab';
+import {DISPLAY_CONTROL,INIT,LOGINED_IN,LOGINED_OUT} from 'actions/tab';
 import styles from 'components/Tab/Tab.scss'
 
 const initState = {
@@ -6,7 +6,8 @@ const initState = {
     market:'',
     discover:'',
     mine:'',
-    active: false
+    active: false,
+    logined:false,
 };
 
 export default function reducer(state = initState, action) {
@@ -23,7 +24,18 @@ export default function reducer(state = initState, action) {
                 market:'',
                 discover:'',
                 mine:'',
+                active: false,
                 [action.arg]: styles.on
+            };
+        case LOGINED_IN:
+            return {
+                ...state,
+                logined:true
+            };
+        case LOGINED_OUT:
+            return {
+                ...state,
+                logined:false
             };
         default:
             return state

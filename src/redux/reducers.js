@@ -9,6 +9,7 @@ import market from 'reducers/market';
 import discover from 'reducers/discover';
 import registerStepFirst from 'reducers/registerStepFirst';
 import registerStepSec from 'reducers/registerStepSec';
+import FindPwdStepSec from 'reducers/FindPwdStepSec';
 import login from 'reducers/login';
 import mine from 'reducers/mine';
 import buy from 'reducers/buy';
@@ -25,6 +26,7 @@ export default combineReducers({
     discover,
     registerStepFirst,
     registerStepSec,
+    FindPwdStepSec,
     login,
     mine,
     buy,

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Header from './Header/Header';
 
 import {connect} from 'react-redux';
-import {interval,submit} from "actions/registerStepFirst";
+import {interval,submit,init} from "actions/registerStepFirst";
 
 import PropTypes from 'prop-types';
 
@@ -15,13 +15,16 @@ class RegisterStepFirst extends Component {
     constructor(props, context) {
         super(props, context);
     }
+    componentWillUnmount(){
+        this.props.init()
+    }
     render() {
-        const {timerCount,isFirst,show,init,phoneNumberTip,verificationCode} = this.props.registerStepFirst;
+        const {timerCount,isFirst,show,phoneNumberTip,verificationCode} = this.props.registerStepFirst;
 
         return (
             <div className={styles.bac}>
-                <Header/>
-                <form className={styles.inputContainer} onSubmit={this.props.interval}>
+                <Header arg={this.context.router.history.location.arg}/>
+                <div className={styles.inputContainer}>
                     <div className={styles.item}>
                         <span>手机号</span>
                         <input ref='phoneNumber' type="text" placeholder="请输入手机号" maxLength='11'/>
@@ -33,7 +36,7 @@ class RegisterStepFirst extends Component {
                             this.props.interval(this.refs.phoneNumber)
                         }}>{
                             show ?
-                                init ? '获取验证码' : '重新获取'
+                                isFirst ? '获取验证码' : '重新获取'
                                 : timerCount + '秒后重新获取'
                         }</i>
                     </div>
@@ -52,7 +55,7 @@ class RegisterStepFirst extends Component {
                             this.props.submit(this.refs,this.context)
                         }}>下一步</div>
                     </div>
-                </form>
+                </div>
             </div>
         )
     }
@@ -60,4 +63,4 @@ class RegisterStepFirst extends Component {
 
 export default connect((state) => ({
     registerStepFirst: state.registerStepFirst,
-}), {interval,submit})(RegisterStepFirst);
+}), {interval,submit,init})(RegisterStepFirst);

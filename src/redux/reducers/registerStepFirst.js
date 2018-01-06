@@ -1,12 +1,11 @@
-import {FIRST_CLICK, TRY_AGAIN, TIME_CONTROL, PHONE_NUMBER_TIP_CONTROL, VERIFICATION_CODE_TIP_CONTROL} from 'actions/registerStepFirst';
+import {FIRST_CLICK, TRY_AGAIN, TIME_CONTROL, PHONE_NUMBER_TIP_CONTROL, VERIFICATION_CODE_TIP_CONTROL,INIT} from 'actions/registerStepFirst';
 
 
 const initState = {
     timerCount:5,
     timerTitle:'重新获取',
-    isFirst:true,
+    isFirst:true,//是否第一次点击,决定显示获取验证码还是重新获取
     show:true,//显示默认文字还是倒计时
-    init:true,//是否第一次点击,
     phoneNumberTip:false,//手机号不符规则的提示
     verificationCode:false,//验证码不符规则的提示
 };
@@ -18,7 +17,6 @@ export default function reducer(state = initState, action) {
                 ...state,
                 isFirst:false,
                 show:false,
-                init:false,
                 phoneNumberTip:false,
             };
         case TRY_AGAIN:
@@ -48,6 +46,14 @@ export default function reducer(state = initState, action) {
                 ...state,
                 phoneNumberTip:false,
                 verificationCode:true
+            };
+        case INIT:
+            return {
+                ...state,
+                isFirst:true,
+                show:true,
+                phoneNumberTip:false,
+                verificationCode:false,
             };
         default:
             return state;
