@@ -3,11 +3,12 @@ import styles from './Tab.scss'
 import {Link} from 'react-router-dom';
 
 import {connect} from 'react-redux';
-import {displayControl,init} from "actions/tab";
+import {displayControl,init,login} from "actions/tab";
 
 class Tab extends Component {
     componentDidMount(){
         this.props.init(this.props.name)
+        this.props.login()
     }
     render() {
         const {home, market, discover, mine, active,logined} = this.props.tab;
@@ -80,4 +81,4 @@ class Tab extends Component {
 export default connect(
     (state) => (
         {tab: state.tab}
-    ), {displayControl,init})(Tab);
+    ), {displayControl,init,login})(Tab);

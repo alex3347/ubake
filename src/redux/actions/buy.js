@@ -108,7 +108,6 @@ export function remove(index) {
 export function radioControl(ref,refs,price) {
     return function (dispatch,getState) {
 
-        console.log(ref,refs,price)
         //修改点击事件对应radioList数组中的值
         let radioListTemp = getState().buy.radioList
         radioListTemp[ref.name] = !radioListTemp[ref.name]

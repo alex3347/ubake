@@ -52,6 +52,7 @@ export default class MineSet extends Component {
                     <i className='iconfont icon-jiantou'/>
                 </div>
                 <div className={styles.btn} onClick={()=>{
+                    localStorage.removeItem('token')
                     this.context.router.history.replace('/')
                 }}>
                     <div>退出登录</div>

@@ -26,7 +26,7 @@ class CategoryDetail extends Component {
                     <Header/>
                     <div className={styles.detail}>
                         <img src={require('./images/bac.png')}  className={styles.pic} alt=""/>
-                        <div className={styles.title}>{this.props.location.state.name}</div>
+                        <div className={styles.title}>{this.props.location.state ? this.props.location.state.name : '蜂蜜奶油小蛋糕'}</div>
                         {
                             !categoryDetail.boutique ? null :
                             <div className={styles.discribe}>
