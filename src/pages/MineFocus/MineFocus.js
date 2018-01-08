@@ -60,6 +60,18 @@ export default class MineFocus extends Component {
                         </div>
                         <div className={styles.right}>关注</div>
                     </div>
+                    <div className={styles.item}>
+                        <div className={styles.left}>
+                            <div className={styles.imgContainer}>
+                                <img src={require('./images/avatar3.png')} alt=""/>
+                            </div>
+                            <div className={styles.contentContainer}>
+                                <div className={styles.name}>拉不拉卡君</div>
+                                <div className={styles.describe}>唯有美食与爱不可辜负</div>
+                            </div>
+                        </div>
+                        <div className={styles.right}>关注</div>
+                    </div>
                 </div>
             </div>
         )

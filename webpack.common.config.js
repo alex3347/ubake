@@ -53,7 +53,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({//用于加载增加了hash值的js文件到html
             filename: 'index.html',
-            template: path.join(__dirname, 'src/index.html')
+            template: path.join(__dirname, 'src/index.html'),
+            favicon: path.join(__dirname, 'src/favicon.ico')
         }),
         new webpack.optimize.CommonsChunkPlugin({//用于提取react redux等公共组件
             name: 'vendor'
