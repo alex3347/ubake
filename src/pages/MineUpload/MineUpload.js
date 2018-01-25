@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 import Header from './Header/Header';
 
+import {connect} from 'react-redux';
+import {change} from "actions/mineUpload";
+
 const styles = require('./MineUpload.scss');
 
-export default class MineUpload extends Component {
+class MineUpload extends Component {
     render() {
+        const {picList} = this.props.mineUpload
         return (
             <div className={styles.bac}>
                 <Header/>
@@ -15,12 +19,17 @@ export default class MineUpload extends Component {
                             <div className={styles.addPic}>
                                 <i className='iconfont icon-iconjia'/>
                             </div>
+                            <input className={styles.inputFile} type="file" multiple="multiple" ref='inputFile' onChange={()=>{
+                                this.props.change(this.refs.inputFile)
+                            }}/>
                             <div className={styles.miniPicContainer}>
-                                <img src={require('./images/temp.png')} alt=""/>
-                                <img src={require('./images/temp.png')} alt=""/>
-                                <img src={require('./images/temp.png')} alt=""/>
-                                <img src={require('./images/temp.png')} alt=""/>
-                                <img src={require('./images/temp.png')} alt=""/>
+                                {
+                                    picList.map((item,index)=>{
+                                        return(
+                                            <img src={item} key={index} alt=""/>
+                                        )
+                                    })
+                                }
                             </div>
                         </div>
                     </div>
@@ -56,3 +65,7 @@ export default class MineUpload extends Component {
         )
     }
 }
+
+export default connect((state) => ({
+    mineUpload: state.mineUpload
+}), {change})(MineUpload);

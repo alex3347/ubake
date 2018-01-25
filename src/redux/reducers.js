@@ -14,6 +14,7 @@ import login from 'reducers/login';
 import mine from 'reducers/mine';
 import buy from 'reducers/buy';
 import marketListDetail from 'reducers/marketListDetail';
+import mineUpload from 'reducers/mineUpload';
 
 
 export default combineReducers({
@@ -31,4 +32,5 @@ export default combineReducers({
     mine,
     buy,
     marketListDetail,
+    mineUpload
 });
