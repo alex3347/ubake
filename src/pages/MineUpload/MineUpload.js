@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Header from './Header/Header';
 
 import {connect} from 'react-redux';
-import {change} from "actions/mineUpload";
+import {change,remove} from "actions/mineUpload";
 
 const styles = require('./MineUpload.scss');
 
@@ -18,15 +18,17 @@ class MineUpload extends Component {
                         <div className={styles.picContainer}>
                             <div className={styles.addPic}>
                                 <i className='iconfont icon-iconjia'/>
+                                <input className={styles.inputFile} type="file" multiple="multiple" ref='inputFile' onChange={()=>{
+                                    this.props.change(this.refs.inputFile)
+                                }}/>
                             </div>
-                            <input className={styles.inputFile} type="file" multiple="multiple" ref='inputFile' onChange={()=>{
-                                this.props.change(this.refs.inputFile)
-                            }}/>
                             <div className={styles.miniPicContainer}>
                                 {
                                     picList.map((item,index)=>{
                                         return(
-                                            <img src={item} key={index} alt=""/>
+                                            <img src={item} key={index} alt="" onClick={()=>{
+                                                this.props.remove(index)
+                                            }}/>
                                         )
                                     })
                                 }
@@ -68,4 +70,4 @@ class MineUpload extends Component {
 
 export default connect((state) => ({
     mineUpload: state.mineUpload
-}), {change})(MineUpload);
+}), {change,remove})(MineUpload);

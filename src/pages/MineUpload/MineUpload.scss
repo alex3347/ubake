@@ -29,17 +29,19 @@
           float: left;
           margin-left: 38px;
           margin-bottom: 38px;
+          overflow: hidden;
+          position: relative;
           i{
             display: inline-block;
             color: #b0b0b0;
           }
-        }
-        .inputFile{
-          opacity: 0;
-          position: absolute;
-          left:38px;
-          width:90px;
-          height:90px;
+          .inputFile{
+            opacity: 0;
+            position: absolute;
+            left:38px;
+            width:90px;
+            height:90px;
+          }
         }
         .miniPicContainer{
           float: left;
