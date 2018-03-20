@@ -7,24 +7,24 @@ import Loading from 'components/Loading/Loading';
 
 import Home from 'bundle-loader?lazy&name=home!pages/Home/Home';
 import NotFound from 'bundle-loader?lazy&name=notFound!pages/NotFound/NotFound';
-import HomeDetail from 'bundle-loader?lazy&name=notFound!pages/HomeDetail/HomeDetail';
-import CategoryDetail from 'bundle-loader?lazy&name=notFound!pages/CategoryDetail/CategoryDetail';
-import Buy from 'bundle-loader?lazy&name=notFound!pages/Buy/Buy';
-import Market from 'bundle-loader?lazy&name=notFound!pages/Market/Market';
-import Discover from 'bundle-loader?lazy&name=notFound!pages/Discover/Discover';
-import Mine from 'bundle-loader?lazy&name=notFound!pages/Mine/Mine';
-import MineUpload from 'bundle-loader?lazy&name=notFound!pages/MineUpload/MineUpload';
-import MineSet from 'bundle-loader?lazy&name=notFound!pages/MineSet/MineSet';
-import MineCollection from 'bundle-loader?lazy&name=notFound!pages/MineCollection/MineCollection';
-import Login from 'bundle-loader?lazy&name=notFound!pages/Login/Login';
-import RegisterStepFirst from 'bundle-loader?lazy&name=notFound!pages/RegisterStepFirst/RegisterStepFirst';
-import RegisterStepSec from 'bundle-loader?lazy&name=notFound!pages/RegisterStepSec/RegisterStepSec';
-import FindPwdStepSec from 'bundle-loader?lazy&name=notFound!pages/FindPwdStepSec/FindPwdStepSec';
-import SearchResult from 'bundle-loader?lazy&name=notFound!pages/SearchResult/SearchResult';
-import MineFocus from 'bundle-loader?lazy&name=notFound!pages/MineFocus/MineFocus';
-import MineFans from 'bundle-loader?lazy&name=notFound!pages/MineFans/MineFans';
-import MineWorks from 'bundle-loader?lazy&name=notFound!pages/MineWorks/MineWorks';
-import MarketListDetail from 'bundle-loader?lazy&name=notFound!pages/MarketListDetail/MarketListDetail';
+import HomeDetail from 'bundle-loader?lazy&name=HomeDetail!pages/HomeDetail/HomeDetail';
+import CategoryDetail from 'bundle-loader?lazy&name=CategoryDetail!pages/CategoryDetail/CategoryDetail';
+import Buy from 'bundle-loader?lazy&name=Buy!pages/Buy/Buy';
+import Market from 'bundle-loader?lazy&name=Market!pages/Market/Market';
+import Discover from 'bundle-loader?lazy&name=Discover!pages/Discover/Discover';
+import Mine from 'bundle-loader?lazy&name=Mine!pages/Mine/Mine';
+import MineUpload from 'bundle-loader?lazy&name=MineUpload!pages/MineUpload/MineUpload';
+import MineSet from 'bundle-loader?lazy&name=MineSet!pages/MineSet/MineSet';
+import MineCollection from 'bundle-loader?lazy&name=MineCollection!pages/MineCollection/MineCollection';
+import Login from 'bundle-loader?lazy&name=Login!pages/Login/Login';
+import RegisterStepFirst from 'bundle-loader?lazy&name=RegisterStepFirst!pages/RegisterStepFirst/RegisterStepFirst';
+import RegisterStepSec from 'bundle-loader?lazy&name=RegisterStepSec!pages/RegisterStepSec/RegisterStepSec';
+import FindPwdStepSec from 'bundle-loader?lazy&name=FindPwdStepSec!pages/FindPwdStepSec/FindPwdStepSec';
+import SearchResult from 'bundle-loader?lazy&name=SearchResult!pages/SearchResult/SearchResult';
+import MineFocus from 'bundle-loader?lazy&name=MineFocus!pages/MineFocus/MineFocus';
+import MineFans from 'bundle-loader?lazy&name=MineFans!pages/MineFans/MineFans';
+import MineWorks from 'bundle-loader?lazy&name=MineWorks!pages/MineWorks/MineWorks';
+import MarketListDetail from 'bundle-loader?lazy&name=MarketListDetail!pages/MarketListDetail/MarketListDetail';
 
 const createComponent = (component) => (match) => (
     <Bundle load={component}>
